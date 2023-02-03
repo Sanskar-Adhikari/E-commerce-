@@ -15,3 +15,13 @@ exports.isAuthUser = catchAsyncErrors(async(req,res,next)=>{
     req.user=await User.findById(decodedData.id);  //this id was created on getjwttoken function which we are accessing here
     next();
 });
+
+exports.authorizeRoles= (...roles)=>{
+    return(req,res,next)=>{
+        if(!roles.includes(req.user.role))
+        {
+            return  next(new ErrorHandler(`Role: ${req.user.role} is not authorized to access this resource`,403));
+        }
+        next();
+    }
+}
