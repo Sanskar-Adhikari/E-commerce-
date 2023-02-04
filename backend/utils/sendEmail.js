@@ -3,8 +3,8 @@ const nodemailer=require('nodemailer');
 const sendEmail = async(options)=>
 {
     const transporter = nodemailer.createTransport({
-        host:"smtp.gmail.com",
-        port:465,
+        host:'smtp.gmail.com',
+        port:587,
         service: process.env.RESET_SERVICE,
         auth:{
             user:process.env.RESET_MAIL,

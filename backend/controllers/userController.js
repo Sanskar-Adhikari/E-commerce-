@@ -3,6 +3,8 @@ const ErrorHandler= require("../utils/errorhandler")
 const User= require("../models/userModel");
 const sendToken = require("../utils/jwttoken")
 const sendEmail =  require("../utils/sendEmail")
+const crypto = require("crypto")  //built in
+
 //register function
 exports.registerUser= catchAsyncErrors(async(req,res,next)=>{
     const {name,email, password}= req.body;
@@ -78,7 +80,7 @@ exports.forgotPass= catchAsyncErrors(async(req,res,next)=>{
     please click on the link below to reset your password:\n\n\n${resetPassUrl}\n\n\n
     If you did not make this request, you can safely ignore this email. Your password will not be reset without clicking on the link above.
     \n Have a great day ahead.\n\n\n\n Best,
-    \n-Sanskar`;
+    \n`;
 
     try
     {
@@ -102,4 +104,34 @@ exports.forgotPass= catchAsyncErrors(async(req,res,next)=>{
         
 
     }
+})
+
+
+//function for reset password
+exports.resetPass= catchAsyncErrors(async(req,res,next)=>{
+
+        //creating token hash
+       const resetPasswordToken = crypto.createHash("sha256")
+       .update(req.params.token)
+       .digest("hex");
+
+       const user= await User.findOne({
+        resetPasswordToken,
+        resetPasswordExpire:{$gt:Date.now()},
+       })
+
+       if(!user){
+        return next(new ErrorHandler("Invalid Reset Password Token Expired",400)) //400 = bad request
+    }
+
+    if(req.body.password !== req.body.confirmPassword)
+    {
+        return next(new ErrorHandler("Password mismatch",400))
+    }
+    user.password = req.body.password;
+    user.resetPasswordToken= undefined;
+    user.resetPasswordExpire = undefined;
+
+    await user.save();
+    sendToken(user, 200, res);  //logging the user back in after reset password sucessful
 })
