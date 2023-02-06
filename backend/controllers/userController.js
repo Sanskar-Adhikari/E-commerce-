@@ -149,6 +149,26 @@ exports.getUserDetails = catchAsyncErrors(async(req,res,next)=>{
 })
 
 
+//function for updating user profile
+exports.updateProfile = catchAsyncErrors(async(req,res,next)=>{
+
+    const newUserData= {
+        name:req.body.name,
+        email:req.body.email,
+    }
+
+    const user= await User.findByIdAndUpdate(req.user.id, newUserData,{
+        new:true,
+        runValidators:true,
+        useFindAndModify:false,
+    })
+    res.status(200).json({
+        success:true
+    })
+})
+
+
+
 //function for updating user password
 exports.updatePass = catchAsyncErrors(async(req,res,next)=>{
 
@@ -165,8 +185,66 @@ exports.updatePass = catchAsyncErrors(async(req,res,next)=>{
     user.password = req.body.newPass;
     await user.save();
     sendToken(user, 200, res);
-        res.status(200).json({
-            sucess:true,
-            user
-        })
+})
+
+
+//get all users --admin
+exports.getUsers = catchAsyncErrors(async(req,res,next)=>{
+    const users = await User.find();
+    res.status(200).json({
+        sucess:true,
+        users,
+    })
+})
+
+//get single users --admin
+exports.getSingleUsers = catchAsyncErrors(async(req,res,next)=>{
+    const user = await User.findById(req.params.id);
+
+    if(!user)
+    {
+        return next(new ErrorHandler("User does not exist"));
+    }
+
+    res.status(200).json({
+        sucess:true,
+        user,
+    })
+})
+
+
+//function for updating user role --admin
+exports.updateRole = catchAsyncErrors(async(req,res,next)=>{
+
+    const newUserData= {
+        name:req.body.name,
+        email:req.body.email,
+        role:req.body.role,
+    }
+
+    const user= await User.findByIdAndUpdate(req.params.id, newUserData,{
+        new:true,
+        runValidators:true,
+        useFindAndModify:false,
+    })
+    res.status(200).json({
+        success:true
+    })
+})
+
+
+//function for delete user --admin
+exports.deleteUser = catchAsyncErrors(async(req,res,next)=>{
+
+    const user = await User.findById(req.params.id)
+
+    if(!user)
+    {
+        return next(new ErrorHandler("user does not exist"));
+    }
+
+    await user.remove();
+    res.status(200).json({
+        success:true
+    })
 })
