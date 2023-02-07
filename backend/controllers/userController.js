@@ -203,7 +203,7 @@ exports.getSingleUsers = catchAsyncErrors(async(req,res,next)=>{
 
     if(!user)
     {
-        return next(new ErrorHandler("User does not exist"));
+        return next(new ErrorHandler("User does not exist",400));
     }
 
     res.status(200).json({
@@ -240,11 +240,12 @@ exports.deleteUser = catchAsyncErrors(async(req,res,next)=>{
 
     if(!user)
     {
-        return next(new ErrorHandler("user does not exist"));
+        return next(new ErrorHandler("user does not exist",400));
     }
 
     await user.remove();
     res.status(200).json({
-        success:true
+        success:true,
+        message:"Deletion successful"
     })
 })

@@ -15,7 +15,7 @@ router.route("/password/update").put(isAuthUser, updatePass)
 router.route("/admin/users").get(isAuthUser, authorizeRoles("admin"),getUsers)
 router.route("/admin/user/:id").get(isAuthUser, authorizeRoles("admin"), getSingleUsers)
 router.route("/admin/user/:id").put(isAuthUser, authorizeRoles("admin"), updateRole)
-router.route("/admin/user/:id").put(isAuthUser, authorizeRoles("admin"), deleteUser)
+router.route("/admin/user/:id").delete(isAuthUser, authorizeRoles("admin"), deleteUser)
 
 
 
