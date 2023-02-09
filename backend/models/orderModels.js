@@ -52,7 +52,7 @@ const orderSchema = new mongoose.Schema({
             type: mongoose.Schema.ObjectId,
             ref:"Product",
             required:true,
-        }
+        },
     }
     ],
     user:{
@@ -63,11 +63,11 @@ const orderSchema = new mongoose.Schema({
 
     paymentInfo:{
         id:{
-            typr:String,
-            required:true
+            type:String,
+            required:true,
         },
         status:{
-            typr:String,
+            type:String,
             required:true
         },
     },
@@ -83,20 +83,21 @@ const orderSchema = new mongoose.Schema({
     },
     taxPrice:{
         type:Number,
-        default:0,
-        required:true
-
+        required:true,
+        default:0
     },
     shippingPrice:{
         type:Number,
+        required:true,
         default:0,
-        required:true
+        
 
     },
     totalPrice:{
         type:Number,
+        required:true,
         default:0,
-        required:true
+        
     },
     orderStatus:{
         type:String,
