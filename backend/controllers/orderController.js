@@ -43,7 +43,7 @@ exports.getSingleOrder = catchAsyncErrors(async(req,res,next)=>{
 
     if(!order)
     {
-        return next(new ErrorHandler("order not found",404));
+        return next(new ErrorHandler("order not found!",404));
     }
     res.status(200).json({
         success:true,
@@ -61,6 +61,22 @@ exports.myOrder = catchAsyncErrors(async(req,res,next)=>{
         orders,
     })
 })
+
+
+//get all orders
+exports.getAllOrder = catchAsyncErrors(async(req,res,next)=>{
+    const orders = await Order.find();
+
+    let totalAmount = 0;
+    orders.forEach(order=>{
+        totalAmount+=order.totalPrice;
+    })
+    res.status(200).json({
+        success:true,
+        orders,
+    })
+})
+
 
 
 
