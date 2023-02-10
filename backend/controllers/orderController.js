@@ -67,7 +67,7 @@ exports.myOrder = catchAsyncErrors(async(req,res,next)=>{
 exports.getAllOrder = catchAsyncErrors(async(req,res,next)=>{
     const orders = await Order.find();
 
-    let totalAmount = 0;
+    let totalAmount = 0;  //to show total sales of a admin
     orders.forEach(order=>{
         totalAmount+=order.totalPrice;
     })
