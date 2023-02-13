@@ -1,93 +1,105 @@
 body {
-    font-family:"Open Sans", "Helvetica Neue", sans-serif;
-    height:100vh;
-    background-color: #4158D0;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-   }
-   
-   
-   .container {
-    height: 50vh;
-    max-width: 600px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 3rem;
+	font-family: "Open Sans", "Helvetica Neue", sans-serif;
+	height: 100vh;
+	background-color: #4158D0;
+	background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+	animation: drop-in 1s ease 200ms backwards;
 
-   }
-   
-   .header {
-    margin: 0.25rem 0;
-    font-size: 2.5rem;
-   }
-   
-   p {
-    margin: 0.5rem 0;
-    font-size: 22px;
-   }
-   
-    .overflow-hidden {
-    padding: 1rem;
-    overflow: hidden;
-   }
-   
-   .drop-in {
-    animation: drop-in 1s ease 200ms backwards;
-   }
-   
-   .drop-in-2 {
-    animation: drop-in 1200ms ease 500ms backwards;
-   }
-   
-   @keyframes drop-in {
-    from {
-     opacity: 0;
-     transform: translateY(-100px);
-    }
-    to {
-     opacity: 1;
-     transform: translate(0px);
-    }
-   }
+}
 
-   ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #522952;
-  }
-  
-  .navbar{
-    right:1rem;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: #b3a0df;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-    transition: color .3s ease-in-out, box-shadow .5s ease-in-out;
-    
+.hamburger {
+	padding: 2rem;
+}
 
-  }
+.back {
+	height: 100vh;
+}
 
-  a:hover {
-    box-shadow: inset 100px 0 0 0 #da8dde;
-    color: rgb(50, 20, 61);
-    border-radius: 18px;
-  }
+.container {
+	height: 50vh;
+	max-width: 600px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 8rem;
 
-  .navbar-menu{
-    padding: 3px;
-  }
+}
 
-  .navbar-item{
-    padding: 3px;
-  }
+.header {
+	margin: 0.25rem 0;
+	font-size: 2.5rem;
+	color: #350c64;
+}
+
+
+p {
+	margin: 0.5rem 0;
+	font-size: 22px;
+}
+
+.overflow-hidden {
+	padding: 1rem;
+	overflow: hidden;
+}
+
+.drop-in {
+	animation: drop-in 1s ease 200ms backwards;
+}
+
+.drop-in-2 {
+	animation: drop-in 1200ms ease 500ms backwards;
+}
+
+@keyframes drop-in {
+	from {
+		opacity: 0;
+		transform: translateY(-100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate(0px);
+	}
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #522952;
+}
+
+.navbar {
+	right: 1rem;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: #b3a0df;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+	transition: color .3s ease-in-out, box-shadow .5s ease-in-out;
+}
+
+a:hover {
+	box-shadow: inset 100px 0 0 0 #da8dde;
+	color: rgb(50, 20, 61);
+	border-radius: 18px;
+}
+
+.navbar-menu {
+	padding: 3px;
+	border-radius: 18px;
+	width: 70%;
+}
+
+.navbar-item {
+	padding: 3px;
+}
