@@ -1,8 +1,7 @@
 body {
 	font-family: "Open Sans", "Helvetica Neue", sans-serif;
 	height: 100vh;
-	background-color: #4158D0;
-	background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background-image: linear-gradient(to bottom, #1abc9c, #ffffff);
 	animation: drop-in 1s ease 200ms backwards;
 
 }
@@ -12,7 +11,9 @@ body {
 }
 
 .back {
-	height: 100vh;
+	height: 100%;
+	display: inline;
+
 }
 
 .container {
@@ -23,24 +24,26 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	padding: 8rem;
-
 }
 
 .header {
 	margin: 0.25rem 0;
 	font-size: 2.5rem;
 	color: #350c64;
+
 }
 
 
 p {
 	margin: 0.5rem 0;
 	font-size: 22px;
+
 }
 
 .overflow-hidden {
 	padding: 1rem;
 	overflow: hidden;
+
 }
 
 .drop-in {
@@ -88,7 +91,7 @@ li a {
 	transition: color .3s ease-in-out, box-shadow .5s ease-in-out;
 }
 
-a:hover {
+.navbar-item> a:hover {
 	box-shadow: inset 100px 0 0 0 #da8dde;
 	color: rgb(50, 20, 61);
 	border-radius: 18px;

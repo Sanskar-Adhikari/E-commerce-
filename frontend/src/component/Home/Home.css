@@ -1,0 +1,32 @@
+.myButton {
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(to right, darkblue, darkorchid) border-box;
+    border-radius: 25em;
+    border: 4px solid transparent;
+    padding: 0.8rem;
+	transition: color .3s ease-in-out, box-shadow .5s ease-in-out;
+  }
+
+  .myButton:hover{
+    color:rgb(223, 150, 150);
+    box-shadow: inset 100px 0 0 0 #231957;
+  }
+
+.banner{
+    background: white;
+    background-image:white;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.banner > h1{
+    height:30%;
+    margin: 10px;
+    font:600 2.5vmax "Sans-serif";
+    padding: 3px;
+}

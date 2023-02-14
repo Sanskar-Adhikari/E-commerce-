@@ -19,7 +19,6 @@ section.style.background = 'white';
 }, [isOpen]);
 return (
 <section className="back" >
-   <div>
       <div className="hamburger">
          <Hamburger toggled={isOpen} toggle={handleToggle} />
       </div>
@@ -42,7 +41,7 @@ return (
          </div>
       </div>
       )}
-   </div>
+   
 </section>
 );
 }
