@@ -30,3 +30,40 @@
     font:600 2.5vmax "Sans-serif";
     padding: 3px;
 }
+
+.homeHeading{
+  text-align: center;
+  font-size: 30px;
+  border-bottom: 1px solid ;
+  max-width: 20%;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+.productCard{
+  color: rgb(44, 11, 103);
+  width:250px;
+  display:flex;
+  flex-direction: column;
+  text-decoration: none;
+  margin: 10px solid;
+  transition: all 2s;
+  padding-bottom: 8px;
+}
+
+.productCard >img{
+  width:250px;
+}
+
+.productCard >div{
+  margin: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.productCard >div>span{
+  margin-left: 10px;
+  margin-top: 2px;
+  font:300 10px;
+}
+

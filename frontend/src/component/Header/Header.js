@@ -23,7 +23,7 @@ return (
          <Hamburger toggled={isOpen} toggle={handleToggle} />
       </div>
       {isOpen && (
-      <div onClick={handleToggle}>
+      <div onClick={handleToggle} className="hamb">
          <div className="container">
             <div className="overflow-hidden">
                <h1 className="header drop-in">Welcome Back!!</h1>
