@@ -12,3 +12,4 @@ npm i react-router-dom
 npm i styled-components
  npm i react-transition-group
  npm install @fortawesome/fontawesome-svg-core @fortawesome/free-brands-svg-icons @fortawesome/react-fontawesome
+npm i react-rating-stars-component
