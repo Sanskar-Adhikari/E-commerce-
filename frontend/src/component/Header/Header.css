@@ -94,3 +94,22 @@ li a {
 .navbar-item {
     padding: 3px;
 }
+
+@media (max-width: 768px) {
+    .container {
+      padding: 4rem;
+    }
+  
+    .header {
+      font-size: 2rem;
+    }
+  
+    .navbar-menu {
+      width: 90%;
+    }
+    
+    li a {
+      padding: 8px;
+    }
+  }
+  
