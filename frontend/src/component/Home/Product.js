@@ -6,7 +6,7 @@ const options={
     edit:false, //cannot let user edit
     color: "blue",
     activeColor:"tomato",
-    size:"30px",
+    size:20,
     value:3.5,
     isHalf:true,
 
