@@ -2,6 +2,7 @@ body {
     font-family: "Open Sans", "Helvetica Neue", sans-serif;
     height: 100vh;
     background-image: linear-gradient(to bottom, #1abc9c, #ffffff);
+    height: 100%;
 }
 
 .hamburger {

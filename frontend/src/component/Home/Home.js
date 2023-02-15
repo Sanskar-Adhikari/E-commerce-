@@ -25,8 +25,15 @@ const Home = () => {
             </div>
             <h2 className='homeHeading'> Featured Products</h2>
 
-            <div className='container' id='container'>
+            <div className='containar' id='container'>
 
+            <Product product={product}/>
+            <Product product={product}/>
+            <Product product={product}/>
+            <Product product={product}/>
+            <Product product={product}/>
+            <Product product={product}/>
+            <Product product={product}/>
             <Product product={product}/>
             </div>
 
