@@ -1,12 +1,14 @@
 body {
     font-family: "Open Sans", "Helvetica Neue", sans-serif;
     height: 100vh;
-    background-image: linear-gradient(to bottom, #1abc9c, #ffffff);
+    background-image: linear-gradient(to bottom, #80e9d4, #ffffff);
     height: 100%;
+   
 }
 
 .hamburger {
     padding: 2rem;
+    position: fixed;
 }
 
 .back {
@@ -19,6 +21,7 @@ body {
     margin: auto;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 8rem;
 	
@@ -64,6 +67,7 @@ ul {
 }
 
 .navbar {
+    
     right: 1rem;
 }
 
@@ -87,6 +91,7 @@ li a {
 }
 
 .navbar-menu {
+    
     padding: 3px;
     border-radius: 18px;
     width: 70%;

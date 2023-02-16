@@ -48,10 +48,11 @@
   text-decoration: none;
   margin: 20px solid;
   margin-bottom: 40px;
+  margin-top: 10px;
   transition: all 1.5s;
   padding: 18px;
   border: #3589a5 4px solid;
-  background-color: rgb(63, 185, 185);
+  background-color: rgb(232, 226, 249);
 }
 
 .productCard >img{
@@ -85,7 +86,7 @@
 .productCard:hover {
   box-shadow:5px 5px 5px rgba(20, 20, 20, 0.30);
   transform: translateY(-1vmax);
-  background-color: rgb(131, 163, 212);
+  background-color: rgb(204, 213, 227);
 }
 
 @media screen and (max-width:600px) {

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import "./Home.css";
 import Product from "./Product.js";
-
+import TopHeading from "../TopHeading"
 
 const product={
     name:"tshirt",
@@ -13,6 +13,7 @@ const product={
 const Home = () => {
     return (
         <Fragment>
+            <TopHeading title="SENIOR PROJECT"/>
             <div className='banner'>
             <p> Welcome to buy, sell , giveaway</p>
             <h1>Find amazing resouces</h1>

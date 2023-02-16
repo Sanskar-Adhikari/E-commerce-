@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Fade as Hamburger } from 'hamburger-react';
 import './Header.css';
 
 function HamburgerOverlay() {
   const [isOpen, setIsOpen] = useState(false);
+  const backRef = useRef(null);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
   useEffect(() => {
-    const section = document.querySelector('.back');
+    const section = backRef.current;
 
     if (isOpen) {
       section.style.transition = 'background 1s ease-in-out';
       section.style.background = 'linear-gradient(to bottom, #1abc9c, #ffffff)';
       document.body.style.overflow = 'hidden';
+      window.scrollTo(0, section.offsetTop);
     } else {
       section.style.background = 'white';
       document.body.style.overflow = 'auto';
@@ -23,7 +25,7 @@ function HamburgerOverlay() {
   }, [isOpen]);
 
   return (
-    <section className="back">
+    <section ref={backRef} className="back">
       <div className="hamburger">
         <Hamburger toggled={isOpen} toggle={handleToggle} />
       </div>
