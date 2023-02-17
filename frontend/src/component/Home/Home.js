@@ -1,7 +1,10 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import "./Home.css";
 import Product from "./Product.js";
 import TopHeading from "../TopHeading"
+import {useSelector,useDispatch} from "react-redux"
+import {getProduct} from "../../actions/ProductActions"
+
 
 const product={
     name:"tshirt",
@@ -11,6 +14,11 @@ const product={
 
 };
 const Home = () => {
+    const dispatch= useDispatch();
+    useEffect(()=>{
+        dispatch(getProduct())
+    },[dispatch])
+
     return (
         <Fragment>
             <TopHeading title="SENIOR PROJECT"/>

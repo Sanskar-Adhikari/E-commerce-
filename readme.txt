@@ -14,3 +14,7 @@ npm i styled-components
  npm install @fortawesome/fontawesome-svg-core @fortawesome/free-brands-svg-icons @fortawesome/react-fontawesome
 npm i react-rating-stars-component
 tsds
+npm i react-helmet-async
+npm install @reduxjs/toolkit
+53944
+nice
