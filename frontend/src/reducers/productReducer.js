@@ -15,12 +15,12 @@ export const productReducer = (state = {
 
             return {
                 loading: true,
-                    product: []
+                    products: []
             }
         case ALL_PRODUCT_SUCCESS:
             return {
                 loading: false,
-                    product: action.payload.products,
+                    products: action.payload.products,
                     productsCount: action.payload.productsCount,
             }
         case ALL_PRODUCT_FAIL:
