@@ -16,5 +16,8 @@ npm i react-rating-stars-component
 tsds
 npm i react-helmet-async
 npm install @reduxjs/toolkit
+npm install react-alert
+npm i react-alert-template-basic
 53944
 nice 
+npm install react-alert@latest react-alert-template-basic@latest --legacy-peer-deps

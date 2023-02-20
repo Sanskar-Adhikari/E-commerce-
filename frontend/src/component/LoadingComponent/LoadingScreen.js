@@ -4,9 +4,11 @@ import "./LoadingScreen.css"
 
 const LoadingScreen = () => {
   return (
-    <div class="loading-container">
-      <div class="loader"></div>
+    <div className="load">
+    <div className="loading-container">
+      <div className="loader"></div>
       <h1>Loading...</h1>
+    </div>
     </div>
   )
 }
