@@ -21,3 +21,7 @@ npm i react-alert-template-basic
 53944
 nice 
 npm install react-alert@latest react-alert-template-basic@latest --legacy-peer-deps
+npm i react-material-ui-carousel
+npm install @mui/material
+npm install @mui/icons-material
+npm install @mui/styles --legacy-peer-deps
