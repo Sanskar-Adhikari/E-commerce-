@@ -1,5 +1,218 @@
-.ProductDetails {
-    background-color: brown;
+.ProductDetails{
+    background-color: rgb(216, 232, 234);
+    width: 100vw;
+    max-width: 100%;
+    padding: 6vmax;
+    box-sizing: border-box;
+    display: flex;
+}
 
+.ProductDetails >div{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2vmax;
+    box-sizing: border-box;
+    border:1px solid rgb(113, 78, 78);
+}
+
+.ProductDetails>div:last-child{
+    align-items: flex-start;
+}
+
+.CarouselImage{
+    width: 100%;
+}
+
+.detailsBlock-1 >h2{
+    color: rgba(6, 8, 70, 0.8);
+    font:600 1.6vmax;
+}
+
+.detailsBlock-1>p{
+    color: rgba(18, 22, 135, 0.5);
+    font:600 1.6vmax;
+    padding-bottom: 2rem;
 
 }
+
+.detailsBlock-2{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 2px solid rgba(157, 0, 255, 0.3);
+    border-bottom: 2px solid rgba(225, 0, 255, 0.3);
+    width: 90%;
+}
+
+.detailsBlock-2 >span{
+    color: rgba(72, 75, 178, 0.5);
+}
+
+.detailsBlock-3{
+    width: 60%;
+}
+
+.detailsBlock-3 >h1{
+    color: rgba(6, 8, 70, 0.8);
+    font: 400 2vmax;
+    margin-top: 1vmax 0;
+    margin-left: 0;
+    margin-bottom: 2rem;
+    text-align: start;
+}
+
+.detailsBlock-3-1{
+    display: flex;
+    align-items: center;
+}
+
+.detailsBlock-3-1-1 >button{
+    border: none;
+    background-color: rgb(91, 88, 88);
+    padding: 8px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s;
+
+}
+.detailsBlock-3-1-1 >button:hover{
+    background-color: rgb(47, 46, 46);
+}
+
+.detailsBlock-3-1-1 >input{
+    border: none;
+    padding: 4px;
+    width:30px;
+    text-align: center;
+    outline: none;
+    color:rgba(6, 8, 70, 0.8);
+}
+
+.greenColor {
+    color: green !important;
+  }
+  .redColor {
+    color: red !important;
+  }
+
+  .detailsBlock-3-1 >button:last-child{
+    border: none;
+    cursor: pointer;
+    background-color: rgb(192, 72, 72);
+    color: white;
+    transition: all 0.5;
+    font:500 1vmax;
+    border-radius: 22px;
+    padding:4px 20px;
+    margin: 1vmax;
+  }
+
+  .detailsBlock-3-1 >button:last-child:hover{
+    background-color: rgb(223, 25, 25);
+  }
+
+  .detailsBlock-3>p{
+    justify-content: start;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 12px 0px;
+    color: rgba(0,0,0,0.7);
+    font-size: 17px;
+    margin: 20px;
+  }
+
+  .detailsBlock-4{
+    color: black;
+    font:500 18px;
+  }
+
+
+  .detailsBlock-4 >p{
+    color: rgba(0, 0, 0, 0.617);
+    font:300 10px;
+    margin-bottom: 20px;
+  }
+
+  .submitReview{
+    border:none;
+    background-color: rgb(129, 63, 190);
+    font: 500 8px;
+    border-radius: 22px;
+    padding: 8px 25px;
+    margin:10px 0px;
+    color:white;
+    cursor:pointer;
+    transition: all 0.5s ease;
+    outline: none;
+  }
+
+  .submitReview:hover{
+    background-color: rgb(96, 50, 140);
+  }
+
+  @media only screen and (max-width: 768px) {
+    /* Your responsive styles go here */
+    .ProductDetails {
+      flex-direction: column;
+      height: unset;
+    }
+  
+    .ProductDetails > div {
+      padding: 2vmax;
+      text-align: center;
+    }
+    .ProductDetails > div:last-child{
+        align-items: center;
+    }
+    .detailsBlock-2 {
+        justify-content: center;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .detailsBlock-3 {
+      width: 100%;
+    }
+  
+    .detailsBlock-3-1{
+        flex-direction: column;
+    }
+    .detailsBlock-3 > h1 {
+      font-size: 1.6vmax;
+      margin-top: 2vmax;
+      margin-bottom: 1rem;
+    }
+  
+    .detailsBlock-3-1 > button:last-child {
+      font-size: 0.8rem;
+      padding: 2px 10px;
+      margin: 1vmax 0;
+    }
+  
+    .detailsBlock-3 > p {
+      margin: 10px 0;
+      font-size: 14px;
+      padding: 8px 0;
+    }
+  
+    .detailsBlock-4 > p {
+      font-size: 8px;
+      margin-bottom: 10px;
+    }
+  
+    .submitReview {
+      font-size: 6px;
+      padding: 4px 12px;
+      margin: 5px 0;
+    }
+  }
+  
+
+
