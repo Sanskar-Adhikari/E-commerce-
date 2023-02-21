@@ -51,6 +51,7 @@
 
 .detailsBlock-2 >span{
     color: rgba(72, 75, 178, 0.5);
+    padding-left: 0.7rem;
 }
 
 .detailsBlock-3{
@@ -213,6 +214,53 @@
       margin: 5px 0;
     }
   }
-  
+  .reviews{
+    display: flex;
+    overflow: auto;
+    margin: 25px;
+  }
+.reviewsHeading{
+  color:rgba(0, 0, 0, 0.846);
+  font: 500 20px;
+  text-align: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.559);
+  padding: 8px;
+  width: 180px;
+  margin: auto;
+  margin-bottom: 20px;
+}
 
+.reviewCard{
+  flex: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.554);
+  border:1px solid black;
+  width:30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  padding:20px
 
+}
+
+.reviewCard>img{
+  width: 80px;
+}
+
+.reviewCard > span{
+  color:rgb(73, 194, 228);
+  font: 300 22px "sans-serif";
+
+}
+
+.reviewCard > p{
+  color:rgb(41, 173, 109);
+  font: 600 30px "sans-serif";
+}
+
+.noReviews{
+  font: 600 60px "sans-serif";
+  text-align: center;
+    color: rgba(26, 80, 188, 0.646);
+
+}

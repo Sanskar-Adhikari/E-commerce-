@@ -1,12 +1,17 @@
 import React, { useEffect, Fragment } from 'react';
 import Carousel from 'react-material-ui-carousel';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductDetails } from '../../actions/ProductActions';
+import { clearErrors, getProductDetails } from '../../actions/ProductActions';
 import './ProductDetails.css';
 import { useParams } from 'react-router-dom';
 import ReactStars from'react-rating-stars-component';
+import ReviewCard from "./ReviewCard"
+import LoadingScreen from '../LoadingComponent/LoadingScreen';
+import { useAlert } from "react-alert";
 
 const ProductDetails = () => {
+  const alert = useAlert();
+
   const dispatch = useDispatch();
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
@@ -15,18 +20,27 @@ const ProductDetails = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    if(error)
+    {
+       alert.error(error);
+       dispatch(clearErrors());
+    }
     dispatch(getProductDetails(id));
-  }, [dispatch, id]);
+  }, [alert, dispatch, error, id]);
 
   const options = {
     size: "large",
+    edit:false,
+    isHalf:true,
     value: product.ratings,
     readOnly: true,
     precision: 0.5,
   };
   
   return (
-    <Fragment>                   
+  <Fragment>
+    {loading? <LoadingScreen/>:
+    (  <Fragment>                   
       <div className='ProductDetails'>
        
         <Carousel>
@@ -72,7 +86,17 @@ const ProductDetails = () => {
         <button className='submitReview'>Submit Review</button>
       </div>
       </div>
-    </Fragment>
+
+      <h3 className='reviewsHeading'>Product Reviews</h3>
+      {product.reviews && product.reviews[0]?(
+        <div className='reviews'>
+        {product.reviews&&product.reviews.map((review)=><ReviewCard review={review}/>)}
+        </div>
+      ):(
+        <p className='noReviews'>No Reviews Yet</p>
+      )}
+    </Fragment>)}
+  </Fragment>
   );
 };
 

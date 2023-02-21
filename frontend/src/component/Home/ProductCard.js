@@ -4,7 +4,7 @@ import ReactStars from 'react-rating-stars-component'
 
 
 
-const Product = ({product}) => {
+const productCard = ({product}) => {
     const options={
         edit:false, //cannot let user edit
         color: "lightpink",
@@ -33,4 +33,4 @@ const Product = ({product}) => {
     );
 }
 
-export default Product;
+export default productCard;

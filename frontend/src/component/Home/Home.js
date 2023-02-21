@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect } from "react";
 import "./Home.css";
-import Product from "./Product.js";
+import ProductCard from "./ProductCard";
 import TopHeading from "../TopHeading";
 import { useSelector, useDispatch } from "react-redux";
-import { getProduct } from "../../actions/ProductActions";
+import { clearErrors, getProduct } from "../../actions/ProductActions";
 import LoadingScreen from "../LoadingComponent/LoadingScreen";
 import { useAlert } from "react-alert";
 
@@ -17,6 +17,7 @@ const Home = () => {
   useEffect(() => {
      if (error) {
        alert.error(error);
+       dispatch(clearErrors());
     
     }
     dispatch(getProduct());
@@ -39,7 +40,7 @@ const Home = () => {
 
           <div className="containar" id="container">
             {products &&
-              products.map((product) => <Product key={product._id} product={product} />)}
+              products.map((product) => <ProductCard key={product._id} product={product} />)}
           </div>
         </Fragment>
       )}
