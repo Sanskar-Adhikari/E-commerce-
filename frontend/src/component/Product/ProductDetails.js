@@ -29,12 +29,11 @@ const ProductDetails = () => {
   }, [alert, dispatch, error, id]);
 
   const options = {
-    size: "large",
+    readOnly: true,
+    precision: 0.5,
     edit:false,
     isHalf:true,
     value: product.ratings,
-    readOnly: true,
-    precision: 0.5,
   };
   
   return (
@@ -70,7 +69,8 @@ const ProductDetails = () => {
           <div className='detailsBlock-3-1'>
             <div className='detailsBlock-3-1-1'>
               <button> -</button>
-              <input value="1" type="number"/>
+              <input onChange={() => {}} defaultValue="1" type="number" />
+
               <button> +</button>
             </div>
             <button>Add to Cart</button>
@@ -90,7 +90,7 @@ const ProductDetails = () => {
       <h3 className='reviewsHeading'>Product Reviews</h3>
       {product.reviews && product.reviews[0]?(
         <div className='reviews'>
-        {product.reviews&&product.reviews.map((review)=><ReviewCard review={review}/>)}
+        {product.reviews&&product.reviews.map((review)=><ReviewCard key={review._id} review={review}/>)}
         </div>
       ):(
         <p className='noReviews'>No Reviews Yet</p>

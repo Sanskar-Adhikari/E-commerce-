@@ -4,9 +4,6 @@ import profilePng from "../extra/profilepng.png"
 
 const ReviewCard = ({review}) => {
     const options = {
-        size: "large",
-        edit:false,
-        isHalf:true,
         value: review.rating,
         readOnly: true,
         precision: 0.5,
