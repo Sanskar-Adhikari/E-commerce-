@@ -20,7 +20,16 @@ const Products = () => {
           {loading? <LoadingScreen/>:
           (  <Fragment>                   
             <h2 className='productsHeading'>Products</h2>
-            
+            <div className='products'>
+             
+              {products&& products.map((product)=>(
+                 <div className='spaces'>
+                <ProductCard key={product._id} product={product}/>
+                </div>
+              ))}
+
+    
+            </div>
           </Fragment>)}
         </Fragment>
         );
