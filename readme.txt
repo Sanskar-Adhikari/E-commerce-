@@ -25,4 +25,5 @@ npm i react-material-ui-carousel
 npm install @mui/material
 npm install @mui/icons-material
 npm install @mui/styles --legacy-peer-deps
-44
+npm i react-js-pagination --legacy-peer-deps
+441

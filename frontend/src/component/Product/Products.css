@@ -1,12 +1,11 @@
-.productsHeading{
-    margin: 25px auto;
-    border-bottom: 2px solid rgba(47, 39, 39, 0.708);
-    padding:10px;
-    font: 600 15px;
-    text-align: center;
-    width:150px;
-    padding-bottom: 10px;
-
+.productsHeading {
+  margin: 25px auto;
+  border-bottom: 2px solid rgba(47, 39, 39, 0.708);
+  padding: 10px;
+  font: 600 15px;
+  text-align: center;
+  width: 80%;
+  padding-bottom: 10px;
 }
 
 .products{
@@ -15,15 +14,123 @@
     padding: 0 13px;
     justify-content: center;
     min-height: 30vh;
+    margin-left: 240px;
+    margin-bottom: 280px;
  }
 
-.spaces{
-    margin: 30px;
+
+
+
+
+  .paginationBox {
+  display: flex;
+  justify-content: center;
+  margin: 6vmax;
 }
 
-  @media only screen and (max-width: 767px) {
-    .products {
-      flex-direction: column;
-      align-items: center;
-    }
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.page-item {
+  background-color: rgb(163, 139, 194);
+  list-style: none;
+  border: 1px solid rgba(0, 0, 0, 0.178);
+  padding: 1vmax 1.5vmax;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.page-item:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.page-item:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.page-link {
+  text-decoration: none;
+  font: 300 0.7vmax "Roboto";
+  color: rgb(80, 80, 80);
+  transition: all 0.3s;
+}
+
+.page-item:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+.page-item:hover .page-link {
+  color: rgb(0, 0, 0);
+}
+
+.pageItemActive {
+  background-color: tomato;
+}
+
+.pageLinkActive {
+  color: white;
+}
+
+.spaces{
+  margin: 20px;
+}
+
+.whole>ul{
+  background-image: linear-gradient(to right, #13d8d2, #8686dc);
+}
+
+.slidestyle{
+  width: 20%;
+  position: absolute;
+  top:7vmax;
+  left: 4vmax;
+}
+
+
+.categorisBox{
+  display: flex;
+  flex-direction: column;
+  background-color:transparent;
+  position: relative;
+}
+
+.category-link{
+  color: rgb(40, 17, 126);
+  cursor: pointer;
+  margin:6px;
+  transition: all 0.5s;
+}
+
+.category-link:hover{
+  color: red;
+}
+
+.slidestyle >fieldset{
+  border:2px solid rgba(0, 0, 0, 0.498);
+  width: 4vmax;
+}
+@media only screen and (max-width: 767px) {
+  .products {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
   }
+  .slidestyle{
+    width: 40%;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .productsHeading {
+    width: 50%;
+    font-size: 12px;
+  }
+
+  .slidestyle {
+    width: 50%;
+  }
+}
+
+
