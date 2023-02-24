@@ -55,20 +55,14 @@ const Login = () => {
 
   const switchTabs = (e, tab) => {
     if (tab === 'login') {
-      switcherTab.current.classList.add('shiftToNeutral');
       switcherTab.current.classList.remove('shiftToRight');
       registerTab.current.classList.remove('shiftToNeutralForm');
-      loginTab.current.classList.remove('shiftToLeft');
       setIsLoginHidden(false); // show login form
 
     }
 
     if (tab === 'register') {
-      
-      switcherTab.current.classList.add('shiftToRight');
-      switcherTab.current.classList.remove('shiftToNeutral');
-      registerTab.current.classList.add('shiftToNeutralForm');
-      loginTab.current.classList.add('shiftToLeft');
+        registerTab.current.classList.add('shiftToNeutralForm');
       setIsLoginHidden(true); // hide login form
 
     }
@@ -92,7 +86,7 @@ const Login = () => {
                   <p onClick={(e) => switchTabs(e, "login")}>LOGIN</p>
                   <p onClick={(e) => switchTabs(e, "register")}>REGISTER</p>
                 </div>
-                <button ref={switcherTab}></button>
+                <button ref={switcherTab} hidden></button>
               </div>
               <form className={`login-card-form ${isLoginHidden ? 'hide' : ''}`} ref={loginTab} onSubmit={loginSubmit}>
                 <div className="form-item">
