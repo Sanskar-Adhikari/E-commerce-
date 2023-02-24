@@ -7,7 +7,8 @@ import ProductCard from '../Home/ProductCard';
 import { useParams } from 'react-router-dom';
 import Pagination from "react-js-pagination";
 import { Slider, Typography } from '@material-ui/core';
-
+import { useAlert } from "react-alert";
+import TopHeading from "../TopHeading";
 
 
 
@@ -30,6 +31,7 @@ const Products = () => {
 
 
     const dispatch = useDispatch();
+    const alert = useAlert();
     const { products, loading, error,productsCount, resultPerPage,filteredProductsCount } = useSelector(
       (state) => state.products
     ); 
@@ -43,12 +45,19 @@ const priceHandler=(e, newPrice)=>
   setPrice(newPrice);
 }
     useEffect(() => {
+      if(error)
+      {
+        alert.error(error)
+        dispatch(clearErrors())
+      }
         dispatch(getProduct(keyword,currentPage,price,category,ratings));
-      }, [category, currentPage, dispatch, keyword, price, ratings]);
+      }, [alert, category, currentPage, dispatch, error, keyword, price, ratings]);
 
       let count = filteredProductsCount;
     return (
         <Fragment>
+            <TopHeading title="PRODUCTS" />
+
           {loading? <LoadingScreen/>:
           (  <Fragment>                   
             <h2 className='productsHeading'>Products</h2>

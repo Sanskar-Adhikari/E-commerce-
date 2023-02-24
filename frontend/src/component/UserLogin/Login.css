@@ -1,0 +1,155 @@
+.login-card-container{
+   
+    font-family: 'Poppins',sans-serif;
+    width: 100vw;
+   background: linear-gradient(to right, #333399,#ff00cc);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card{
+    width: 450px;
+    background: rgba(255, 255, 255, .5);
+    padding: 4rem;
+    border-radius: 10px;
+    position: relative;
+    
+}
+
+.login-card::before{
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255,.15);
+    inset:0;
+    transform: rotate(-5deg);
+    z-index: -1;
+}
+
+.loginToogle {
+    display: flex;
+    height: 3vmax;
+  }
+  .loginToogle > p {
+    color: rgba(0, 0, 0, 0.678);
+    font: 900 2vmax "Roboto";
+    transition: all 0.5s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    width: 70%;
+  }
+
+  .login-card-form{
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+    align-items: center;
+    margin: auto;
+    padding: 2vmax;
+    justify-content: space-evenly;
+    height: 70%;
+    transition: all 0.5s;
+}
+
+.login-card-logo, .login-card-header{
+    margin-bottom: 2rem;
+}
+
+.login-card-logo img{
+    width:60px;
+}
+
+.login-card-logo,.login-card-header,.login-card-footer{
+    text-align: center;
+}
+
+.login-card a{
+    text-decoration: none;
+    color:#35339a
+}
+
+.login-card a:hover{
+    text-decoration: underline;
+}
+
+.login-card-header h1{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.login-card-header h1 + div{
+    opacity: .8;
+    font-style: normal;
+    font-size: small;
+}
+
+
+.signUpForm {
+    border-radius: 20px;
+    margin-top: 38vmax;
+    transform: translateY(-100%) translateX(-100vmax);
+  }
+
+
+
+
+.login-card input[type="text"], .login-card input[type="password"],.login-card input[type="email"]
+{
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 1);
+    padding: 1rem 1.5rem;
+    padding-left: calc(1rem*3.5);
+    border-radius: 100px;
+    width: 50%; 
+    transition: background .5s;
+}
+
+.login-card input:focus{
+    background: rgb(142, 75, 134);
+}
+
+.loginBtn{
+    background: rgb(39, 4, 42);
+    color: white;
+    padding: 1rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: backgroung .5s;
+}
+
+
+.loginBtn:hover{
+    background-color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+}
+
+.shiftToLeft {
+    transform: translateX(-100%);
+  }
+  .shiftToNeutral {
+    transform: translateX(0%);
+  }
+  
+  .shiftToNeutralForm {
+    transform: translateX(0%) translateY(-100%);
+  }
+  
+  .shiftToRight {
+    transform: translateX(100%);
+  }
+
+
+@media(max-width:760px){
+    body{
+        padding: 2rem 0;
+    }
+    .login-card{
+        width: 280px;
+        padding: 2rem;
+    }
+}

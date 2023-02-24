@@ -6,6 +6,7 @@ import Home from './component/Home/Home';
 import ProductDetails from './component/Product/ProductDetails';
 import Products from './component/Product/Products';
 import Search from './component/Product/Search';
+import Login from './component/UserLogin/Login';
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
         <Route path="/products" element={<Products/>} />
         <Route path="/products/:keyword" element={<Products/>} />
         <Route path="/search" element={<Search/>} />
+        <Route path="/login" element={<Login/>} />
+
 
 
  

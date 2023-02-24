@@ -26,4 +26,4 @@ npm install @mui/material
 npm install @mui/icons-material
 npm install @mui/styles --legacy-peer-deps
 npm i react-js-pagination --legacy-peer-deps
-441
+2554

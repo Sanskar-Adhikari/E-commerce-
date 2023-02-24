@@ -8,6 +8,7 @@ import ReactStars from'react-rating-stars-component';
 import ReviewCard from "./ReviewCard"
 import LoadingScreen from '../LoadingComponent/LoadingScreen';
 import { useAlert } from "react-alert";
+import TopHeading from '../TopHeading';
 
 const ProductDetails = () => {
   const alert = useAlert();
@@ -39,7 +40,8 @@ const ProductDetails = () => {
   return (
   <Fragment>
     {loading? <LoadingScreen/>:
-    (  <Fragment>                   
+    (  <Fragment>  
+      <TopHeading title={`${product.name} DETAIL`}/>                 
       <div className='ProductDetails'>
        
         <Carousel>
