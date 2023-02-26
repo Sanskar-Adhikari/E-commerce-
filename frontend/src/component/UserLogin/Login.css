@@ -1,9 +1,13 @@
+
+.hamburger
+{
+    z-index: 999;
+}
 .login-card-container{
-   
     font-family: 'Poppins',sans-serif;
     width: 100vw;
     background: linear-gradient(to right, #333399,#ff00cc);
-    position: fixed;
+  position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -89,7 +93,7 @@
 
 .signUpForm {
     border-radius: 20px;
-    margin-top: 38vmax;
+    margin-top: calc(50vh - 130px); 
     transform: translateY(-100%) translateX(-100vmax);
   }
 
@@ -143,6 +147,25 @@
     transform: translateX(100%);
   }
 
+
+  #registerImage > img{
+    
+    width: 3vmax;
+    border-radius: 100px;
+  }
+
+  #registerImage > input{
+    padding-left: 10px;
+    width: 19vmax;
+  }
+
+  #registerImage > input::file-selector-button{
+    cursor:pointer;
+    height: 3vh;
+    border: none;
+    color:#1d1aab;
+    background-color: #c271ba;
+  } 
 
 @media(max-width:760px){
     body{

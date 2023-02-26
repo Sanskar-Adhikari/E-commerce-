@@ -6,6 +6,18 @@ body {
    
 }
 
+.speedDialContainer {
+    position: fixed;
+    bottom: 98%; 
+    right: 20px; 
+    z-index: 9999; 
+  }
+  
+  .speedDialContainer .MuiSpeedDial-root {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 .hamburger {
     padding: 2rem;
     position: fixed;
@@ -14,7 +26,16 @@ body {
 .back {
     height: 100%;
 }
-
+.MuiFab-label
+{
+    font-size: 8px;
+}
+.speedIcon{
+    width:60px;
+    height: 60px;
+    border-radius: 100%;
+    z-index: 11;
+}
 .container {
     height: 50vh;
     max-width: 600px;
@@ -100,6 +121,7 @@ li a {
 .navbar-item {
     padding: 3px;
 }
+
 
 @media (max-width: 768px) {
     .container {

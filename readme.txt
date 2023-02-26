@@ -26,4 +26,5 @@ npm install @mui/material
 npm install @mui/icons-material
 npm install @mui/styles --legacy-peer-deps
 npm i react-js-pagination --legacy-peer-deps
-2554
+npm i express-fileupload
+npm i express-fileupload cloudinary
