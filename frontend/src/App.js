@@ -16,7 +16,7 @@ import Profile from "./component/UserLogin/Profile"
 import ProtectedRoute from './component/Route/ProtectedRoute';
 import { redirect  } from "react-router-dom";
 import UpdateProfile from "./component/UserLogin/UpdateProfile"
-
+import UpdatePassword from "./component/UserLogin/UpdatePassword"
 function App() {
   
 const {isAuth, user} = useSelector(state=>state.user)
@@ -37,6 +37,7 @@ const {isAuth, user} = useSelector(state=>state.user)
         <Route element={<ProtectedRoute />}>
           <Route exact path="/account" element={<Profile/>}/>
           <Route exact path="/me/update" element={<UpdateProfile/>}/>
+          <Route exact path="//password/update" element={<UpdatePassword/>}/>
 
         </Route>
 

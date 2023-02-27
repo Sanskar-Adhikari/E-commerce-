@@ -8,7 +8,7 @@ import FaceIcon from '@material-ui/icons/Face';
 import {useAlert} from "react-alert";
 import{useDispatch, useSelector} from "react-redux";
 import { useNavigate } from 'react-router-dom';
-import { UPDATE_PROFILE_REQUEST } from '../../constants/userConstant';
+import { UPDATE_PROFILE_RESET } from '../../constants/userConstant';
 import TopHeading from '../TopHeading';
 
 
@@ -66,7 +66,7 @@ const UpdateProfile = () => {
           dispatch(loadUser());
           navigate("/account");
           dispatch({
-            type:UPDATE_PROFILE_REQUEST,
+            type:UPDATE_PROFILE_RESET,
           })
         }
        },[alert, dispatch, error, isUpdated, navigate, user])

@@ -28,4 +28,4 @@ npm install @mui/styles --legacy-peer-deps
 npm i react-js-pagination --legacy-peer-deps
 npm i express-fileupload
 npm i express-fileupload cloudinary
-8:47:57
+92052
