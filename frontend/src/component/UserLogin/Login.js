@@ -1,7 +1,7 @@
 import React, { Fragment, useRef, useState, useEffect } from 'react';
 import './Login.css';
 import LoadingScreen from '../LoadingComponent/LoadingScreen';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import logos from '../UserLogin/logoa.jpeg';
@@ -10,6 +10,8 @@ import FaceIcon from '@material-ui/icons/Face';
 import {useAlert} from "react-alert";
 import{useDispatch, useSelector} from "react-redux";
 import { useNavigate } from 'react-router-dom';
+import TopHeading from '../TopHeading';
+
 
 const Login = () => {
 const alert = useAlert();
@@ -89,7 +91,8 @@ const {error, loading, isAuth} = useSelector((state)=>state.user)
     <Fragment>
       {loading? <LoadingScreen/> : 
       <Fragment>
-       
+           <TopHeading title="LOGIN"/>                 
+
       <Fragment>
         <div className="top login-card-container">
           <div className="login-card">

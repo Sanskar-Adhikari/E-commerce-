@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import Profile from "./component/UserLogin/Profile"
 import ProtectedRoute from './component/Route/ProtectedRoute';
 import { redirect  } from "react-router-dom";
+import UpdateProfile from "./component/UserLogin/UpdateProfile"
 
 function App() {
   
@@ -29,12 +30,13 @@ const {isAuth, user} = useSelector(state=>state.user)
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/products" element={<Products/>} />
+        <Route path="/products" exact element={<Products/>} />
         <Route path="/products/:keyword" element={<Products/>} />
-        <Route path="/search" element={<Search/>} />
+        <Route path="/search" exact element={<Search/>} />
         <Route path="/login" element={<Login/>} />
         <Route element={<ProtectedRoute />}>
-          <Route path="/account" element={<Profile/>}/>
+          <Route exact path="/account" element={<Profile/>}/>
+          <Route exact path="/me/update" element={<UpdateProfile/>}/>
 
         </Route>
 

@@ -11,29 +11,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+ 
 }
 
 .login-card{
     width: 450px;
     background: rgba(255, 255, 255, .5);
-    padding: 4rem;
+    padding: 2rem;
     border-radius: 10px;
     position: relative;
     
 }
 
-.login-card::before{
-    content: '';
-    position: absolute;
-    background: rgba(255, 255, 255,.15);
-    inset:0;
-    transform: rotate(-5deg);
-    z-index: -1;
-}
-
 .loginToogle {
     display: flex;
-    height: 3vmax;
+    height: 2rem;
   }
   .loginToogle > p {
     color: rgba(0, 0, 0, 0.678);
@@ -58,7 +50,7 @@
 }
 
 .login-card-logo, .login-card-header{
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .login-card-logo img{
@@ -93,11 +85,15 @@
 
 .signUpForm {
     border-radius: 20px;
-    margin-top: calc(50vh - 130px); 
+    margin-top: calc(50vh - 50px); 
     transform: translateY(-100%) translateX(-100vmax);
   }
 
-
+.updateform{
+  border-radius: 20px;
+  margin-top: calc(50vh - 80px); 
+  transform: translateY(-100%) translateX(-100vmax);
+}
 
 
 .login-card input[type="text"], .login-card input[type="password"],.login-card input[type="email"]
@@ -149,9 +145,13 @@
 
 
   #registerImage > img{
-    
     width: 3vmax;
-    border-radius: 100px;
+    border-radius: 100%;
+  }
+  .updateimg
+  {
+    width: 3vmax;
+    border-radius: 100%;
   }
 
   #registerImage > input{
@@ -166,6 +166,7 @@
     color:#1d1aab;
     background-color: #c271ba;
   } 
+
 
 @media(max-width:760px){
     body{
