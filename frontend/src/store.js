@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import { productDetailsReducer, productReducer } from './reducers/productReducer';
-import { profileReducer, userReducer } from './reducers/userReducer';
+import { forgotPasswordReducer, profileReducer, userReducer } from './reducers/userReducer';
 
 const store = configureStore({
   reducer: {
@@ -10,6 +10,7 @@ const store = configureStore({
     productDetails:productDetailsReducer,
     user:userReducer,
     profile:profileReducer,
+    forgotPassword:forgotPasswordReducer,
   },
   middleware: [thunk],
   devTools: true, // enable the Redux DevTools browser extension

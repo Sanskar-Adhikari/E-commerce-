@@ -7,7 +7,10 @@ import { LOGIN_REQUEST, LOGIN_FAIL, LOGIN_SUCCESS,CLEAR_ERRORS,
     UPDATE_PROFILE_FAIL,
     UPDATE_PASSWORD_REQUEST,
     UPDATE_PASSWORD_SUCCESS,
-    UPDATE_PASSWORD_FAIL, } from "../constants/userConstant"
+    UPDATE_PASSWORD_FAIL,
+    FORGOT_PASSWORD_FAIL,
+    FORGOT_PASSWORD_REQUEST,
+    FORGOT_PASSWORD_SUCCESS, } from "../constants/userConstant"
 import axios from "axios";
 //login
 export const login = (email, password)=>async(dispatch)=>{
@@ -106,27 +109,52 @@ export const updateProfile = (userData)=>async(dispatch)=>{
     }
     }
 
-    //update profile
-export const updatePassword = (passwords)=>async(dispatch)=>{
+
+// Update Password
+export const updatePassword = (passwords) => async (dispatch) => {
+    try {
+      dispatch({ type: UPDATE_PASSWORD_REQUEST });
+  
+      const config = { headers: { "Content-Type": "application/json" } };
+  
+      const { data } = await axios.put(
+        `/api/v1/password/update`,
+        passwords,
+        config
+      );
+  
+      dispatch({ type: UPDATE_PASSWORD_SUCCESS, payload: data.success });
+    } catch (error) {
+      dispatch({
+        type: UPDATE_PASSWORD_FAIL,
+        payload: error.response.data.message,
+      });
+    }
+  };
+
+
+
+//forgot password
+export const forgotPassword = (email)=>async(dispatch)=>{
     try{
-        dispatch({type:UPDATE_PASSWORD_REQUEST});
+
+        dispatch({type:FORGOT_PASSWORD_REQUEST})
         const config={
-            headers:{"Content-Type":"application/json"}};
-            const {data} = await axios.put(
-                `/api/v1/password/update`,
-                passwords,
-                config
-            )
-            dispatch({type:UPDATE_PASSWORD_SUCCESS, payload:data.success})
+            headers:{"Content-Type":"application/json"}
         }
-    
-    catch(e)
-    {
-        dispatch({type:UPDATE_PASSWORD_FAIL, payload:e.response.data.message})
+        const {data} = await axios.post(
+            `/api/v1/password/forgot`,
+            email,
+            config
+        )
+        dispatch({type:FORGOT_PASSWORD_SUCCESS, payload:data.message})
     }
+    catch(e){
+        dispatch({type:FORGOT_PASSWORD_FAIL, payload:e.response.data.message})
     }
 
 
+}
 
 //clear errors
 export const clearErrors=()=>async(dispatch)=>{

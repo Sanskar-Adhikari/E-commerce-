@@ -14,9 +14,12 @@ import UserOptions from "./component/Header/UserOptions";
 import { useSelector } from 'react-redux';
 import Profile from "./component/UserLogin/Profile"
 import ProtectedRoute from './component/Route/ProtectedRoute';
-import { redirect  } from "react-router-dom";
 import UpdateProfile from "./component/UserLogin/UpdateProfile"
 import UpdatePassword from "./component/UserLogin/UpdatePassword"
+import ForgotPassword from "./component/UserLogin/ForgotPassword.js"
+
+
+
 function App() {
   
 const {isAuth, user} = useSelector(state=>state.user)
@@ -34,6 +37,8 @@ const {isAuth, user} = useSelector(state=>state.user)
         <Route path="/products/:keyword" element={<Products/>} />
         <Route path="/search" exact element={<Search/>} />
         <Route path="/login" element={<Login/>} />
+        <Route exact path="//password/forgot" element={<ForgotPassword/>}/>
+
         <Route element={<ProtectedRoute />}>
           <Route exact path="/account" element={<Profile/>}/>
           <Route exact path="/me/update" element={<UpdateProfile/>}/>

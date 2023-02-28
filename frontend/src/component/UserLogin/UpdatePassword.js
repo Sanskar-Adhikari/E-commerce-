@@ -1,7 +1,7 @@
 import React, {  useState, useEffect } from 'react';
 import './Login.css';
 import logos from '../UserLogin/logoa.jpeg';
-import {clearErrors, updatePassword, loadUser} from "../../actions/UserAction"
+import {clearErrors, updatePassword} from "../../actions/UserAction"
 import {useAlert} from "react-alert";
 import{useDispatch, useSelector} from "react-redux";
 import { useNavigate } from 'react-router-dom';
@@ -53,7 +53,8 @@ const UpdatePassword = () => {
   return (
     
     <div>
-    {loading? <LoadingScreen />:<div>
+    {loading? <LoadingScreen />:(
+    <div>
     <TopHeading title="UPDATE PASSWORD"/>                 
          <div className="top login-card-container">
           <div className="login-card">
@@ -65,7 +66,6 @@ const UpdatePassword = () => {
           </div>
           <form
               className="updateform login-card-form shiftToNeutralForm "
-              encType="multipart/form-data"
               onSubmit={updatePasswordSubmit}
             >
 <div className="form-item">
@@ -94,21 +94,19 @@ const UpdatePassword = () => {
                 <LockIcon />
                 <input
                   type="password"
-                  placeholder="Re-enter New Password"
+                  placeholder="Re-enter"
                   required
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </div>
-
-
               <input type="submit" value="Update" className="loginBtn" />
             </form>
           </div>
           </div>
           </div>
        
-      }
+      )}
    </div>
   )
 }

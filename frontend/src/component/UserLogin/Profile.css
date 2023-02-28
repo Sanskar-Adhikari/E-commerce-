@@ -18,7 +18,7 @@
     display: block;
     margin: 0 auto;
     width: 40vmax; 
-    height: 30vmax;
+    height: 15vmax;
     border-radius: 100%;
     margin-bottom: 20px;
     padding-right: 10px;
@@ -60,3 +60,10 @@
     color: #fff;
   }
   
+.updateimg{
+  border-radius: 5px;
+}
+
+.forgotcard{
+  margin-top: 200px;
+}

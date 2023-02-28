@@ -20,7 +20,7 @@ const Profile = () => {
         <Fragment>
     <TopHeading title={`${user.name}'s Account`}/>      
     <div className="profileContainer">
-            <div>
+            <div className='arrange'>
               <h1>My Profile</h1>
              <img src={user.avatar.url} alt={user.name} />
               <Link to="/me/update">Edit Profile</Link>
