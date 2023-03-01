@@ -10,7 +10,10 @@ import { LOGIN_REQUEST, LOGIN_FAIL, LOGIN_SUCCESS,CLEAR_ERRORS,
     UPDATE_PASSWORD_FAIL,
     FORGOT_PASSWORD_FAIL,
     FORGOT_PASSWORD_REQUEST,
-    FORGOT_PASSWORD_SUCCESS, } from "../constants/userConstant"
+    FORGOT_PASSWORD_SUCCESS, 
+    RESET_PASSWORD_REQUEST,
+    RESET_PASSWORD_SUCCESS,
+    RESET_PASSWORD_FAIL,} from "../constants/userConstant"
 import axios from "axios";
 //login
 export const login = (email, password)=>async(dispatch)=>{
@@ -151,6 +154,29 @@ export const forgotPassword = (email)=>async(dispatch)=>{
     }
     catch(e){
         dispatch({type:FORGOT_PASSWORD_FAIL, payload:e.response.data.message})
+    }
+
+
+}
+
+
+//reset password
+export const resetPassword = (token, passwords)=>async(dispatch)=>{
+    try{
+
+        dispatch({type:RESET_PASSWORD_REQUEST})
+        const config={
+            headers:{"Content-Type":"application/json"}
+        }
+        const {data} = await axios.put(
+            `/api/v1/password/reset/${token}`,
+            passwords,
+            config
+        )
+        dispatch({type:RESET_PASSWORD_SUCCESS, payload:data.success})
+    }
+    catch(e){
+        dispatch({type:RESET_PASSWORD_FAIL, payload:e.response.data.message})
     }
 
 

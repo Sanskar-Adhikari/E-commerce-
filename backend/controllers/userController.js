@@ -79,9 +79,9 @@ exports.forgotPass= catchAsyncErrors(async(req,res,next)=>{
     //the user model is already made before getting resettoken so we must save first in user model
     await user.save({validateBeforeSave:false});
 
-    const resetPassUrl = `${req.protocol}://${req.get("host")}/api/v1/password/reset/${resetToken}`;
+    const resetPassUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
     
-    const message = `We received a request to reset the password for your account. If you made this request,
+    const message = `We received a request to reset the password for your user account. If you made this request,
     please click on the link below to reset your password:\n\n\n${resetPassUrl}\n\n\n
     If you did not make this request, you can safely ignore this email. Your password will not be reset without clicking on the link above.
     \n Have a great day ahead.\n\n\n\n Best,
@@ -166,7 +166,7 @@ exports.updateProfile = catchAsyncErrors(async(req,res,next)=>{
         {
             const user= await User.findById(req.user.id);
             const imageId= user.avatar.public_id;
-            await cloudinaty.v2.uploader.destroy(imageId);
+            await cloudinary.v2.uploader.destroy(imageId);
             const myCloud =  await cloudinary.v2.uploader.upload(req.body.avatar, {
                 folder:"avatars",
                 width:150,

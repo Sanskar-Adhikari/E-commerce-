@@ -17,7 +17,7 @@ const categories = ["Books",
 "StudyMaterial",
 "Tops",
 "Bottoms",
-"Laptop",
+"laptop",
 "SmartPhones",
 "Shoes",
 "DormItems"]
@@ -63,11 +63,12 @@ const priceHandler=(e, newPrice)=>
             <h2 className='productsHeading'>Products</h2>
             <div className='products'>
              
-              {products&& products.map((product)=>(
-                 <div className='spaces'>
-                <ProductCard key={product._id} product={product}/>
-                </div>
-              ))}
+            {products && products.map((product) => (
+  <div className="spaces" key={product._id}>
+    <ProductCard product={product} />
+  </div>
+))}
+
 
     
             </div>
@@ -88,8 +89,8 @@ const priceHandler=(e, newPrice)=>
 
 <Typography>
   Categories
-  <div>
-    <ul className='categorisBox'>
+</Typography>
+<ul className='categorisBox'>
       {categories.map((category)=>(
         <li className='category-link' key={category}
         onClick={()=>setCategory(category)}>
@@ -97,8 +98,6 @@ const priceHandler=(e, newPrice)=>
         </li>
       ))}
     </ul>
-  </div>
-</Typography>
 
                 <fieldset>
                     <Typography component="legend">
@@ -120,7 +119,7 @@ const priceHandler=(e, newPrice)=>
                 </div>
 
             <div className='whole'>
-        {resultPerPage<count && 
+        {resultPerPage<count &&( 
             <Pagination
             activePage={currentPage}
             itemsCountPerPage={resultPerPage}
@@ -134,7 +133,7 @@ const priceHandler=(e, newPrice)=>
             linkClass="page-link"
             activeClass="pageItemActive"
             activeLinkClass="pageLinkActive"
-          />}
+          />)}
             </div>
           </Fragment>)}
         </Fragment>
