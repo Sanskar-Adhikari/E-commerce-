@@ -31,7 +31,7 @@ const UpdateProfile = () => {
         const myForm = new FormData();
         myForm.set('name', name);
         myForm.set('email', email);
-        myForm.set('avatar', avatar);
+        myForm.set('avatar', avatar || '');
         dispatch(updateProfile(myForm));
       };
 
