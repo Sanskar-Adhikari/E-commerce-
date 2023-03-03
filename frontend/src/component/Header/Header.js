@@ -44,6 +44,7 @@ function HamburgerOverlay() {
                   <li className="navbar-item"><a href="/about">About</a></li>
                   <li className="navbar-item"><a href="/search">Search</a></li>
                   <li className="navbar-item"><a href="/login">Login</a></li>
+                  <li className="navbar-item"><a href="/cart">Cart</a></li>
 
                 </ul>
               </nav>

@@ -18,6 +18,7 @@ import UpdateProfile from "./component/UserLogin/UpdateProfile"
 import UpdatePassword from "./component/UserLogin/UpdatePassword"
 import ForgotPassword from "./component/UserLogin/ForgotPassword"
 import ResetPassword from "./component/UserLogin/ResetPassword"
+import Cart from "./component/Cart/Cart"
 
 
 
@@ -40,6 +41,7 @@ const {isAuth, user} = useSelector(state=>state.user)
         <Route path="/login" element={<Login/>} />
         <Route exact path="/password/forgot" element={<ForgotPassword/>}/>
         <Route exact path="/password/reset/:token" element={<ResetPassword/>}/>
+        <Route path="/cart" element={<Cart/>} />
 
         <Route element={<ProtectedRoute />}>
           <Route exact path="/account" element={<Profile/>}/>

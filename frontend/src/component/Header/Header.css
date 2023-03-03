@@ -38,7 +38,7 @@ body {
 }
 .container {
     height: 50vh;
-    max-width: 600px;
+    max-width: 700px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -123,7 +123,7 @@ li a {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .container {
       padding: 4rem;
     }

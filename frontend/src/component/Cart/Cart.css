@@ -1,0 +1,151 @@
+.emptyCart{
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.cartContainer{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+}
+
+
+
+.cartPage{
+    padding: 8vmax;
+    height: 55vh;
+}
+
+
+.cartHeader{
+    background-color: rgb(129, 157, 214);
+    width: 90%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    color: white;
+    margin: auto;
+    font: 600 1vmax "sans-serif";
+}
+
+.cartHeader > p:last-child {
+    text-align: end;
+  }
+
+.cartInput{
+    height: 8vmax;
+    display: flex;
+    align-items: center;
+}
+
+.cartInput >button{
+    border: none;
+    background-color: rgb(32, 96, 133);
+    cursor: pointer;
+    color: aliceblue;
+    transition: all 0.5s;
+    padding: 4px;
+}
+
+.cartInput >button:hover{
+    background-color: rgb(17, 108, 78);
+}
+
+.cartInput > input{
+    border: none;
+    color: rgb(19, 114, 81);
+    font: 400 1vmax "sans-serif";
+    width:0.8vmax;
+    text-align: center;
+    padding: 4px;
+}
+
+.cartSubTotal{
+    display: flex;
+    color: rgb(17, 46, 46);
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.cartGrossTotal{
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+}
+
+.cartGrossTotalBox{
+    border-top: 4px solid rgb(30, 77, 165);
+    margin: 1vmax 3vmax;
+    display: flex;
+    justify-content: space-between;
+    padding: 1vmax 2vmax;
+}
+
+.checkOutBtn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.checkOutBtn >button{
+    background-color: rgb(170, 185, 240);
+    border-radius: 15px;
+    padding: 5px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .cartHeader {
+      font-size: 14px;
+    }
+    .cartInput > input {
+      font-size: 12px;
+    }
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    .cartPage {
+      height: 60vh;
+    }
+    .cartHeader {
+      font-size: 16px;
+    }
+    .cartInput > input {
+      font-size: 14px;
+    }
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    .cartPage {
+      height: 70vh;
+    }
+    .cartHeader {
+      font-size: 18px;
+    }
+    .cartInput > input {
+      font-size: 16px;
+    }
+    .cartContainer {
+      grid-template-columns: 5fr 1fr 1fr;
+    }
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    .cartPage {
+      height: 80vh;
+    }
+    .cartHeader {
+      font-size: 20px;
+    }
+    .cartInput > input {
+      font-size: 18px;
+    }
+  }
+  

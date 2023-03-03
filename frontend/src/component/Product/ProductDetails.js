@@ -9,6 +9,8 @@ import ReviewCard from "./ReviewCard"
 import LoadingScreen from '../LoadingComponent/LoadingScreen';
 import { useAlert } from "react-alert";
 import TopHeading from '../TopHeading';
+import {addItemsToCart} from "../../actions/cartAction";
+
 
 const ProductDetails = () => {
   const alert = useAlert();
@@ -52,8 +54,16 @@ const ProductDetails = () => {
     {
      return;
     }
+
   const temp= quantity-1;
   setQuantity(temp);
+  }
+
+  const addToCartHandler = () =>{
+    dispatch(addItemsToCart(id, quantity))
+    alert.success("Item added to cart");
+
+
   }
   return (
   <Fragment>
@@ -93,7 +103,7 @@ const ProductDetails = () => {
 
               <button onClick={increaseQuantity}> +</button>
             </div>
-            <button>Add to Cart</button>
+            <button onClick={addToCartHandler}>Add to Cart</button>
           </div>
           <p>
             Status:
