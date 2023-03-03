@@ -28,4 +28,6 @@ npm install @mui/styles --legacy-peer-deps
 npm i react-js-pagination --legacy-peer-deps
 npm i express-fileupload
 npm i express-fileupload cloudinary
+frontend % npm i country-state-city --legacy-peer-deps
+
 92052

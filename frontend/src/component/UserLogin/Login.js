@@ -11,9 +11,11 @@ import {useAlert} from "react-alert";
 import{useDispatch, useSelector} from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import TopHeading from '../TopHeading';
+import { useLocation } from 'react-router-dom';
 
 
 const Login = () => {
+
 const alert = useAlert();
 const {error, loading, isAuth} = useSelector((state)=>state.user)
   const dispatch = useDispatch();
@@ -58,20 +60,25 @@ const {error, loading, isAuth} = useSelector((state)=>state.user)
     email: '',
     password: '',
   });
+
   const { name, email, password } = user;
+
   const [avatar, setAvatar] = useState();
   const [avatarPreview, setAvatarPreview] = useState('/logo192.png');
   const [isLoginHidden, setIsLoginHidden] = useState(false);
+  const location = useLocation();
+ const redirect=location.search?location.search.split("=")[1]: "/account";
+
  useEffect(()=>{
   if(error){
     alert.error(error);
     dispatch(clearErrors());
   }
   if(isAuth)
-  {
-    navigate("/account")
+  { 
+    navigate(redirect)
   }
- },[alert, dispatch, error, isAuth, navigate])
+ },[alert, dispatch, error, isAuth, navigate, redirect,location])
   const switchTabs = (e, tab) => {
     if (tab === 'login') {
       switcherTab.current.classList.remove('shiftToRight');

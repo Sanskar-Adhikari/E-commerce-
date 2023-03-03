@@ -19,7 +19,7 @@ import UpdatePassword from "./component/UserLogin/UpdatePassword"
 import ForgotPassword from "./component/UserLogin/ForgotPassword"
 import ResetPassword from "./component/UserLogin/ResetPassword"
 import Cart from "./component/Cart/Cart"
-
+import Shipping from "./component/Cart/Shipping";
 
 
 function App() {
@@ -47,7 +47,7 @@ const {isAuth, user} = useSelector(state=>state.user)
           <Route exact path="/account" element={<Profile/>}/>
           <Route exact path="/me/update" element={<UpdateProfile/>}/>
           <Route exact path="/password/update" element={<UpdatePassword/>}/>
-
+          <Route exact path="/shipping" element={<Shipping/>}/>
         </Route>
 
 

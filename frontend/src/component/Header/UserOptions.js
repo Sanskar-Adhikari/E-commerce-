@@ -1,21 +1,24 @@
-import React, { Fragment, useState } from 'react'
+import React, {  useState } from 'react'
 import {SpeedDial, SpeedDialAction} from "@material-ui/lab"
 import PersonIcon from "@material-ui/icons/Person";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import DashboardIcon from "@material-ui/icons/Dashboard";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart"
 import { useNavigate } from 'react-router-dom';
 import {useAlert} from "react-alert";
 import{logout} from "../../actions/UserAction"
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import "./Header.css"
 
 const UserOptions = ({user}) => {
+  const {cartItems} = useSelector((state)=>state.cart)
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [open, setOpen]= useState(false);
     const alert=useAlert();
     const options = [
+      { icon: <ShoppingCartIcon style={{color:cartItems.length>0?"burlywood":"unset"}} />, name: `Cart(${cartItems.length}))`, func: cart },
         { icon: <ListAltIcon />, name: "Orders", func: orders },
         { icon: <PersonIcon />, name: "Profile", func: account },
         { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
@@ -38,6 +41,9 @@ function account(){
     navigate("/account");
 }
 
+function cart(){
+  navigate("/cart");
+}
 function logoutUser(){
     dispatch(logout());
     alert.success("Logout was successful");

@@ -5,7 +5,7 @@ import {useSelector, useDispatch} from "react-redux"
 import { addItemsToCart, removeItemsFromCart } from '../../actions/cartAction';
 import { Typography } from "@material-ui/core";
 import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const Cart = () => {
     const dispatch= useDispatch();
@@ -33,7 +33,9 @@ const deleteCartItems=(id)=>{
     dispatch(removeItemsFromCart(id));
 }
 
-
+const checkoutHandler = ()=>{
+    Navigate("/login?redirect=shipping")
+}
 
 
   return (
@@ -75,11 +77,13 @@ const deleteCartItems=(id)=>{
                 </div>
                 <div className='cartGrossTotalBox'>
                     <p>Gross total</p>
-                    <p>{`$600`}</p>
+                    <p>{`$${cartItems.reduce(
+                        (acc, item)=>acc+item.quantity* item.price,0
+                    )}`}</p>
                 </div>
                 <div></div>
                 <div className='checkOutBtn'>
-                    <button>Check Out</button>
+                    <button onClick={checkoutHandler}>Check Out</button>
                 </div>
             </div>
         </div>
