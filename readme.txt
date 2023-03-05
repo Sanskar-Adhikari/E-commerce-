@@ -29,5 +29,7 @@ npm i react-js-pagination --legacy-peer-deps
 npm i express-fileupload
 npm i express-fileupload cloudinary
 frontend % npm i country-state-city --legacy-peer-deps
-
-92052
+npm i stripe
+npm i @stripe/react-stripe-js @stripe/stripe-js  --legacy-peer-deps
+npm i @material-ui/data-grid 
+114920

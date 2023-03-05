@@ -40,7 +40,7 @@ const setCurrentPageNo=(e)=>{
   setCurrentPage(e);
 }
 
-const priceHandler=(e, newPrice)=>
+const priceHandler=(event, newPrice)=>
 {
   setPrice(newPrice);
 }
@@ -62,7 +62,6 @@ const priceHandler=(e, newPrice)=>
           (  <Fragment>                   
             <h2 className='productsHeading'>Products</h2>
             <div className='products'>
-             
             {products && products.map((product) => (
   <div className="spaces" key={product._id}>
     <ProductCard product={product} />

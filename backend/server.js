@@ -8,7 +8,7 @@ process.on("uncaughtException",(err)=>{
     console.log(`Server shutting down becasue of Uncaught Exception`);
     process.exit(1);
 })
-//server
+//config
 dotenv.config({path:"backend/config/config.env"});
 
 //connect databse

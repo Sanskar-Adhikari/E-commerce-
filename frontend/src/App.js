@@ -8,7 +8,7 @@ import Products from './component/Product/Products';
 import Search from './component/Product/Search';
 import Login from './component/UserLogin/Login';
 import store from "./store";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { loadUser } from './actions/UserAction';
 import UserOptions from "./component/Header/UserOptions";
 import { useSelector } from 'react-redux';
@@ -18,15 +18,29 @@ import UpdateProfile from "./component/UserLogin/UpdateProfile"
 import UpdatePassword from "./component/UserLogin/UpdatePassword"
 import ForgotPassword from "./component/UserLogin/ForgotPassword"
 import ResetPassword from "./component/UserLogin/ResetPassword"
+import OrderSuccess from "./component/Cart/OrderSuccess";
+import MyOrders from "./component/Order/MyOrders"
 import Cart from "./component/Cart/Cart"
 import Shipping from "./component/Cart/Shipping";
-
+import ConfirmOrder from "./component/Cart/ConfirmOrder";
+import Payment from "./component/Cart/Payment";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from 'axios';
 
 function App() {
   
 const {isAuth, user} = useSelector(state=>state.user)
-  React.useEffect(()=>{
-    store.dispatch(loadUser())
+const [stripeApiKey, setStripeApiKey] = useState("")
+
+async function getStripeApiKey(){
+  const {data} = await axios.get("/api/stripeapikey");
+  setStripeApiKey(data.stripeApiKey);
+}
+
+  useEffect(()=>{
+    store.dispatch(loadUser());
+    getStripeApiKey();
   },[])
   return (
     <Router>
@@ -48,6 +62,12 @@ const {isAuth, user} = useSelector(state=>state.user)
           <Route exact path="/me/update" element={<UpdateProfile/>}/>
           <Route exact path="/password/update" element={<UpdatePassword/>}/>
           <Route exact path="/shipping" element={<Shipping/>}/>
+          <Route exact path="/order/confirm" element={<ConfirmOrder/>}/>
+          {stripeApiKey&&<Route path="/process/payment" element={  <Elements stripe={loadStripe(stripeApiKey)}>component={Payment}</Elements>}/>}
+          <Route exact path="/success" element={<OrderSuccess/>}/>
+          <Route exact path="/orders" element={<MyOrders/>}/>
+
+
         </Route>
 
 

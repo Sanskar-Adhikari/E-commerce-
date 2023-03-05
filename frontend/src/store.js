@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import { productDetailsReducer, productReducer } from './reducers/productReducer';
 import { forgotPasswordReducer, profileReducer, userReducer } from './reducers/userReducer';
 import {cartReducer} from "./reducers/cartReducer"
+import { myOrdersReducer, newOrderReducer } from './reducers/orderReducer';
 const store = configureStore({
   reducer: {
     // combine your reducers here
@@ -12,6 +13,8 @@ const store = configureStore({
     profile:profileReducer,
     forgotPassword:forgotPasswordReducer,
     cart:cartReducer,
+    newOrder: newOrderReducer,
+    myOrders:myOrdersReducer,
   },
 
   middleware: [thunk],
