@@ -69,7 +69,8 @@ async function getStripeApiKey(){
           <Route exact path="/orders" element={<MyOrders/>}/>
           <Route exact path="/order/confirm" element={<ConfirmOrder/>}/>
           <Route exact path="/order/:id" element={<OrderDetails/>}/>
-          <Route exact path="/admin/dashboard" element={<Dashboard/>}/>
+          <Route isAdmin={true} exact path="/admin/dashboard" element={<Dashboard/>}/>
+          <Route isAdmin={true} exact path="/admin/products" element={<ProductList/>}/>
 
         </Route>
 

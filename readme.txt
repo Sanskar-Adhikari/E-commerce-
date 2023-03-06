@@ -32,4 +32,5 @@ frontend % npm i country-state-city --legacy-peer-deps
 npm i stripe
 npm i @stripe/react-stripe-js @stripe/stripe-js  --legacy-peer-deps
 npm i @material-ui/data-grid 
-114920
+npm i chart.js react-chartjs-2 --legacy-peer-deps
+1252

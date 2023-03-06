@@ -18,6 +18,7 @@ padding-left: 10px;
 .sidebar>.a >.img{
   height: 30px;
   width: 30px;
+
 }
 
 .sidebar > a:first-child {
@@ -32,6 +33,7 @@ padding-left: 10px;
   filter: drop-shadow(0 0 10px tomato);
 }
 .sidebar a {
+  background-color: transparent;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.493);
   font: 200 1rem "Roboto";
@@ -52,12 +54,16 @@ padding-left: 10px;
 }
 
 .MuiTypography-root {
-  background-color: #fff !important;
+  background-color: transparent !important;
 }
-  .MuiTreeView-root {
-    background-color: white;
+.MuiTreeView-root {
+    background-color: transparent !important;
   }
+.MuiCollapse-wrapperInner>a{
+  background-color: rgb(90, 141, 185) !important;
+}
+  .MuiTreeItem-root .Mui-expanded .Mui-selected
+  {
+    background-color: transparent !important;
 
-  .MuiCollapse-wrapper{
-    background-color: white;
   }
