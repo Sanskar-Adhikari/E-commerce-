@@ -28,6 +28,11 @@ const MyOrders = () => {
         headerName: "Status",
         minWidth: 150,
         flex: 0.5,
+        cellClassName: (params) => {
+            return params.getValue(params.id, "status") === "Delivered"
+              ? "greenColor"
+              : "redColor";
+          },
        
       },
       {
@@ -44,6 +49,22 @@ const MyOrders = () => {
         type: "number",
         minWidth: 270,
         flex: 0.5,
+      },
+
+      {
+        field: "actions",
+        flex: 0.3,
+        headerName: "Actions",
+        minWidth: 150,
+        type: "number",
+        sortable: false,
+        renderCell: (params) => {
+          return (
+            <Link to={`/order/${params.getValue(params.id, "id")}`}>
+              <LaunchIcon />
+            </Link>
+          );
+        },
       },
   
   ];

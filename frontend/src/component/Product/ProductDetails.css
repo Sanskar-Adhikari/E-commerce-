@@ -49,9 +49,10 @@
     width: 90%;
 }
 
-.detailsBlock-2 >span{
+.detailsBlock-2-span{
     color: rgba(72, 75, 178, 0.5);
     padding-left: 0.7rem;
+    font: 200 1vmax "sans-serif";
 }
 
 .detailsBlock-3{
@@ -156,8 +157,21 @@
     background-color: rgb(96, 50, 140);
   }
 
+  .submitDialog{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .submitDialogTextArea{
+    border: 2px solid black;
+    margin: 1vmax 0;
+    padding: 1rem;
+    font: 400 1rem "sans-serif" 
+
+  }
+
+
   @media only screen and (max-width: 768px) {
-    /* Your responsive styles go here */
     .ProductDetails {
       flex-direction: column;
       height: unset;
@@ -247,7 +261,7 @@
   width: 80px;
 }
 
-.reviewCard > span{
+.reviewCardComment{
   color:rgb(73, 194, 228);
   font: 300 22px "sans-serif";
 

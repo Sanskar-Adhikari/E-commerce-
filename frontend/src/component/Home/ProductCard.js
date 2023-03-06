@@ -1,19 +1,14 @@
 import React from 'react';
 import {Link} from "react-router-dom"
-import ReactStars from 'react-rating-stars-component'
-
+import {Rating} from "@material-ui/lab"
 
 
 const productCard = ({product}) => {
-    const options={
-        edit:false, //cannot let user edit
-        color: "lightpink",
-        activeColor:"tomato",
-        size:20,
-        value:product.ratings,
-        isHalf:true,
-    
-    };
+    const options = {
+        value: product.ratings,
+        readOnly: true,
+        precision: 0.5,
+      };
     return (
         
          <Link className='productCard' to={`/product/${product._id}`}>
@@ -21,8 +16,8 @@ const productCard = ({product}) => {
          <p>{product.name}</p>
          
          <div>
-            <ReactStars {...options}/>
-            <span>
+            <Rating {...options}/>
+            <span className='productSpans'>
                 ( {product.numberOfReviews} Reviews )
             </span>
          </div>

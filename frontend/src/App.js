@@ -21,9 +21,11 @@ import ResetPassword from "./component/UserLogin/ResetPassword"
 import OrderSuccess from "./component/Cart/OrderSuccess";
 import MyOrders from "./component/Order/MyOrders"
 import Cart from "./component/Cart/Cart"
+import OrderDetails from "./component/Order/OrderDetails"
 import Shipping from "./component/Cart/Shipping";
 import ConfirmOrder from "./component/Cart/ConfirmOrder";
 import Payment from "./component/Cart/Payment";
+import Dashboard from "./component/admin/Dashboard"
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from 'axios';
@@ -62,11 +64,12 @@ async function getStripeApiKey(){
           <Route exact path="/me/update" element={<UpdateProfile/>}/>
           <Route exact path="/password/update" element={<UpdatePassword/>}/>
           <Route exact path="/shipping" element={<Shipping/>}/>
-          <Route exact path="/order/confirm" element={<ConfirmOrder/>}/>
           {stripeApiKey&&<Route path="/process/payment" element={  <Elements stripe={loadStripe(stripeApiKey)}>component={Payment}</Elements>}/>}
           <Route exact path="/success" element={<OrderSuccess/>}/>
           <Route exact path="/orders" element={<MyOrders/>}/>
-
+          <Route exact path="/order/confirm" element={<ConfirmOrder/>}/>
+          <Route exact path="/order/:id" element={<OrderDetails/>}/>
+          <Route exact path="/admin/dashboard" element={<Dashboard/>}/>
 
         </Route>
 
