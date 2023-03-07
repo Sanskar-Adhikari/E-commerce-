@@ -26,9 +26,11 @@ import Shipping from "./component/Cart/Shipping";
 import ConfirmOrder from "./component/Cart/ConfirmOrder";
 import Payment from "./component/Cart/Payment";
 import Dashboard from "./component/admin/Dashboard"
+import ProductList from "./component/admin/ProjectList"
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from 'axios';
+import NewProduct from './component/admin/NewProduct';
 
 function App() {
   
@@ -71,6 +73,7 @@ async function getStripeApiKey(){
           <Route exact path="/order/:id" element={<OrderDetails/>}/>
           <Route isAdmin={true} exact path="/admin/dashboard" element={<Dashboard/>}/>
           <Route isAdmin={true} exact path="/admin/products" element={<ProductList/>}/>
+          <Route isAdmin={true} exact path="/admin/product" element={<NewProduct/>}/>
 
         </Route>
 
