@@ -10,7 +10,7 @@
   }
   .newProductContainer h1 {
     color: rgba(0, 0, 0, 0.733);
-    font: 300 2rem "Roboto";
+    font: 300 2rem "sans-serif";
     text-align: center;
   }
   
@@ -88,7 +88,7 @@
     border: none;
     background-color: rgb(95, 255, 71);
     color: white;
-    font: 300 1vmax "Roboto";
+    font: 300 1vmax "sans-serif";
     width: 100%;
     padding: 0.8vmax;
     cursor: pointer;
