@@ -15,20 +15,46 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import SideBar from "./Sidebar";
 import { DELETE_PRODUCT_RESET } from "../../constants/productConstants";
 import TopHeading from "../TopHeading";
+import { useNavigate } from "react-router-dom";
 
-const ProjectList = () => {
-    const { id } = useParams();
 
+const ProductList = () => {
+    //const {id}  = useParams();
+   // console.log(id);
+const navigate= useNavigate();
     const dispatch = useDispatch();
     const alert = useAlert();
     const { error, products } = useSelector((state) => state.products);
+    const { error: deleteError, isDeleted } = useSelector((state) => state.product
+    );
     useEffect(() => {
-        if (error) {
-          alert.error(error);
-          dispatch(clearErrors());
-        }
-        dispatch(getAdminProduct());
-      }, [dispatch, alert, error]);
+      if (error) {
+        alert.error(error);
+        dispatch(clearErrors());
+      }
+  
+      if (deleteError) {
+        alert.error(deleteError);
+        dispatch(clearErrors());
+      }
+  
+      if (isDeleted) {
+        alert.success("Product Deleted Successfully");
+        navigate("/admin/dashboard");
+        dispatch({ type: DELETE_PRODUCT_RESET });
+      }
+  
+      dispatch(getAdminProduct());
+    }, [dispatch, alert, error, deleteError, isDeleted, navigate]);
+
+
+
+      const deleteProductHandler = (id) => {
+        dispatch(deleteProduct(id));
+      };
+    
+
+
     const rows = [];
     const columns = [
         { field: "id", headerName: "Product ID", minWidth: 200, flex: 0.5 },
@@ -62,14 +88,21 @@ const ProjectList = () => {
           minWidth: 150,
           type: "number",
           sortable: false,
-          renderCell: () => {
+          renderCell: (params) => {
                 return(
-                    <Fragment>
-                          <Link to={`/admin/product/${id}`}>  <EditIcon /></Link>
-                          <Button>
+                  <Fragment>
+            <Link to={`/admin/product/${params.getValue(params.id, "id")}`}>
+              <EditIcon />
+            </Link>
+
+            <Button
+              onClick={() =>
+                deleteProductHandler(params.getValue(params.id, "id"))
+              }
+            >
               <DeleteIcon />
             </Button>
-                    </Fragment>
+          </Fragment>
                 )
           }}]
 
@@ -105,4 +138,4 @@ const ProjectList = () => {
   )
 }
 
-export default ProjectList
+export default ProductList

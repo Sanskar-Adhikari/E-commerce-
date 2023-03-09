@@ -14,7 +14,6 @@ const Dashboard = () => {
   const dispatch = useDispatch();
 
   const { products } = useSelector((state) => state.products);
-  console.log(products)
 
 
   products &&

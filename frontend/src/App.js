@@ -26,7 +26,7 @@ import Shipping from "./component/Cart/Shipping";
 import ConfirmOrder from "./component/Cart/ConfirmOrder";
 import Payment from "./component/Cart/Payment";
 import Dashboard from "./component/admin/Dashboard"
-import ProductList from "./component/admin/ProjectList"
+import ProductList from "./component/admin/ProductList"
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from 'axios';
