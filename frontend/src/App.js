@@ -32,6 +32,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import axios from 'axios';
 import NewProduct from './component/admin/NewProduct';
 import UpdateProduct from './component/admin/UpdateProduct';
+import Order from './component/admin/Order';
+import ProcessOrder from './component/admin/ProcessOrder';
 
 function App() {
   
@@ -76,10 +78,10 @@ async function getStripeApiKey(){
           <Route isAdmin={true} exact path="/admin/products" element={<ProductList/>}/>
           <Route isAdmin={true} exact path="/admin/product" element={<NewProduct/>}/>
           <Route isAdmin={true} exact path="/admin/product/:id" element={<UpdateProduct/>}/>
+          <Route isAdmin={true} exact path="/admin/orders" element={<Order/>}/>
+          <Route isAdmin={true} exact path="/admin/order/:id" element={<ProcessOrder/>}/>
 
         </Route>
-
-
      </Routes>
       <Footer />
     </Router>
