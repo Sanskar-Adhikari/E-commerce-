@@ -34,6 +34,9 @@ import NewProduct from './component/admin/NewProduct';
 import UpdateProduct from './component/admin/UpdateProduct';
 import Order from './component/admin/Order';
 import ProcessOrder from './component/admin/ProcessOrder';
+import UsersList from './component/admin/UsersList';
+import UpdateUser from './component/admin/UpdateUser';
+import ProductReviews from './component/admin/ProductReviews';
 
 function App() {
   
@@ -80,6 +83,9 @@ async function getStripeApiKey(){
           <Route isAdmin={true} exact path="/admin/product/:id" element={<UpdateProduct/>}/>
           <Route isAdmin={true} exact path="/admin/orders" element={<Order/>}/>
           <Route isAdmin={true} exact path="/admin/order/:id" element={<ProcessOrder/>}/>
+          <Route isAdmin={true} exact path="/admin/users" element={<UsersList/>}/>
+          <Route isAdmin={true} exact path="/admin/user/:id" element={<UpdateUser/>}/>
+          <Route isAdmin={true} exact path="/admin/reviews" element={<ProductReviews/>}/>
 
         </Route>
      </Routes>
