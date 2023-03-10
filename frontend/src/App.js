@@ -31,6 +31,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from 'axios';
 import NewProduct from './component/admin/NewProduct';
+import UpdateProduct from './component/admin/UpdateProduct';
 
 function App() {
   
@@ -74,6 +75,7 @@ async function getStripeApiKey(){
           <Route isAdmin={true} exact path="/admin/dashboard" element={<Dashboard/>}/>
           <Route isAdmin={true} exact path="/admin/products" element={<ProductList/>}/>
           <Route isAdmin={true} exact path="/admin/product" element={<NewProduct/>}/>
+          <Route isAdmin={true} exact path="/admin/product/:id" element={<UpdateProduct/>}/>
 
         </Route>
 
