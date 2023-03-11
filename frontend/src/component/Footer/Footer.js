@@ -12,7 +12,7 @@ function Footer() {
         <h3>Buy, Sell, <span>Giveaway</span></h3>
 
         <p className="footer-links">
-          <a href="/" className="link-1">Home\t</a>
+          <a href="/" className="link-1">Home</a>
           
           <a href="/products">Products</a>
         
