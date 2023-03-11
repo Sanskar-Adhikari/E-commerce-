@@ -17,7 +17,6 @@ import { DELETE_PRODUCT_RESET, DELETE_REVIEW_RESET } from "../../constants/produ
 import TopHeading from "../TopHeading";
 import { useNavigate } from "react-router-dom";
 import Star from "@material-ui/icons/Star";
-
 const ProductReviews = () => {
     //const {id}  = useParams();
    // console.log(id);
@@ -25,7 +24,7 @@ const navigate= useNavigate();
     const dispatch = useDispatch();
     const alert = useAlert();
     const { error: deleteError, isDeleted  } = useSelector((state) => state.review);
-    const {error, reviews,loading } = useSelector((state) => state.ProductReviews
+    const {error, reviews,loading } = useSelector((state) => state.productReviews
     );
     const [productId, setProductId] = useState("")
     useEffect(() => {
@@ -45,16 +44,17 @@ const navigate= useNavigate();
         dispatch({ type: DELETE_REVIEW_RESET });
       }
   
-    }, [dispatch, alert, error, deleteError, isDeleted, navigate]);
+    }, [dispatch, alert, error, deleteError, isDeleted, navigate, productId]);
 
 
 
-      const deleteProductHandler = (id) => {
-       // dispatch(deleteProduct(id));
+      const deleteReviewHandler = (id) => {
+        dispatch(deleteReviews(id, productId));
       };
     
-const productReviewSubmitHandler = ()=>{
-
+const productReviewSubmitHandler = (e)=>{
+e.preventDefault();
+dispatch(getAllReviews(productId))
 }
 
     const rows = [];
@@ -100,7 +100,7 @@ const productReviewSubmitHandler = ()=>{
 
             <Button
               onClick={() =>
-                deleteProductHandler(params.getValue(params.id, "id"))
+                deleteReviewHandler(params.getValue(params.id, "id"))
               }
             >
               <DeleteIcon />
@@ -116,7 +116,7 @@ const productReviewSubmitHandler = ()=>{
         id:item._id,
         rating: item.rating,
         comment: item.comment,
-        name: item.user,
+        name: item.name,
       });
     });
   return (
@@ -149,7 +149,7 @@ const productReviewSubmitHandler = ()=>{
             type="submit"
             disabled={loading ? true : false || setProductId===""?true:false}
           >
-            Update user
+            View Reviews
           </Button>
         </form>
   
@@ -161,7 +161,7 @@ const productReviewSubmitHandler = ()=>{
             disableSelectionOnClick
             className="productListTable"
             autoHeight
-          />:<h1 className="noHeading">No reviews yer</h1>}
+          />:<h1 className="noHeading">No reviews yet</h1>}
         </div>
         </div>
         </Fragment>

@@ -48,7 +48,7 @@ exports.getAllProducts= catchAsyncErrors(async(req, res,next) =>{
     let products = await apiFeature.query;
     let filteredProductsCount = products.length;
     apiFeature.pagination(resultPerPage)
-    //products = await apiFeature.query;
+    products = await apiFeature.query.clone();
     res.status(200).json({
         success:true,
         products,
@@ -155,14 +155,14 @@ exports.createProductReview= catchAsyncErrors(async(req,res,next)=>{
 
     const product = await Product.findById(productId);
 
-    const isReviewed = product.reviews.find(r=>r.user.toString()===req.user._id.toString())
+    const isReviewed = product.reviews.find((r)=>r.user.toString()===req.user._id.toString())
     if(isReviewed)
     {
-        product.reviews.forEach(r=>{
+        product.reviews.forEach((r)=>{
             if(r.user.toString()===req.user._id.toString())
             {
-            r.rating=rating,
-            r.comment = comment
+            (r.rating=rating),
+            (r.comment = comment)
         }
         })
     }
@@ -178,7 +178,7 @@ exports.createProductReview= catchAsyncErrors(async(req,res,next)=>{
     product.ratings =average / product.reviews.length
     await product.save({validateBeforeSave:false});
     res.status(200).json({
-        sucess:true
+        success:true
     })
 })
 
@@ -190,7 +190,7 @@ exports.getProductReviews = catchAsyncErrors (async(req, res, next)=>{
         return next(new ErrorHandler("product not found",404) );
     }
     res.status(200).json({
-        sucess:true,
+        success:true,
         reviews:product.reviews,
     })
 })
@@ -232,7 +232,7 @@ exports.deleteReviews = catchAsyncErrors (async(req, res, next)=>{
             useFindAndModify:false,
         })
     res.status(200).json({
-        sucess:true,
+        success:true,
     })
 })
 

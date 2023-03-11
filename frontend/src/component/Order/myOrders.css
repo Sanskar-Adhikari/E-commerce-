@@ -4,7 +4,6 @@
     padding: 0 7vmax;
     box-sizing: border-box;
     background-color: rgb(88, 189, 184);
-    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -14,7 +13,7 @@
   
   #myOrdersHeading {
     text-align: center;
-    font: 400 1.2vmax "Roboto";
+    font: 400 2.8vmax "Roboto";
     padding: 0.5vmax;
     box-sizing: border-box;
     color: rgb(255, 255, 255);
@@ -62,8 +61,8 @@
     }
   
     #myOrdersHeading {
-      font: 400 2.2vmax "Roboto";
-      padding: 4vw;
+      font: 400 3.2vmax "Roboto";
+      
     }
   
     .myOrdersTable div {

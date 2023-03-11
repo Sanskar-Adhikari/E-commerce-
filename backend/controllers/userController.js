@@ -57,8 +57,8 @@ exports.logout = catchAsyncErrors(async(req, res, next)=>{
     })
 
     res.status(200).json({
-        sucess:true,
-        message:"Log out sucessful"
+        success:true,
+        message:"Log out successful"
 
     })
 })
@@ -95,8 +95,8 @@ exports.forgotPass= catchAsyncErrors(async(req,res,next)=>{
             message,
         });
         res.status(200).json({
-            sucess:true,
-            message:`Email sucessfully sent to ${user.email}`,
+            success:true,
+            message:`Email successfully sent to ${user.email}`,
         })
     }
     catch(e)
@@ -148,7 +148,7 @@ exports.getUserDetails = catchAsyncErrors(async(req,res,next)=>{
     const user = await User.findById(req.user.id);
 
         res.status(200).json({
-            sucess:true,
+            success:true,
             user
         })
 })
@@ -216,7 +216,7 @@ exports.updatePass = catchAsyncErrors(async(req,res,next)=>{
 exports.getUsers = catchAsyncErrors(async(req,res,next)=>{
     const users = await User.find();
     res.status(200).json({
-        sucess:true,
+        success:true,
         users,
     })
 })
@@ -231,7 +231,7 @@ exports.getSingleUsers = catchAsyncErrors(async(req,res,next)=>{
     }
 
     res.status(200).json({
-        sucess:true,
+        success:true,
         user,
     })
 })

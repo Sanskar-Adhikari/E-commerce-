@@ -67,8 +67,9 @@ const {error, loading, isAuth} = useSelector((state)=>state.user)
   const [avatarPreview, setAvatarPreview] = useState('/logo192.png');
   const [isLoginHidden, setIsLoginHidden] = useState(false);
   const location = useLocation();
- const redirect=location.search?location.search.split("=")[1]: "/account";
 
+ const redirect=location.search ? location.search.split("=")[1]: "/account";
+console.log(redirect);
  useEffect(()=>{
   if(error){
     alert.error(error);
@@ -76,9 +77,10 @@ const {error, loading, isAuth} = useSelector((state)=>state.user)
   }
   if(isAuth)
   { 
+    //console.log(location);
     navigate(redirect)
   }
- },[alert, dispatch, error, isAuth, navigate, redirect,location])
+ },[alert, dispatch, error, isAuth, navigate, redirect, location])
   const switchTabs = (e, tab) => {
     if (tab === 'login') {
       switcherTab.current.classList.remove('shiftToRight');

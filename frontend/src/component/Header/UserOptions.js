@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import {useAlert} from "react-alert";
 import{logout} from "../../actions/UserAction"
 import { useDispatch, useSelector } from 'react-redux';
+import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
+import HomeIcon from '@mui/icons-material/Home';
 import "./Header.css"
 
 const UserOptions = ({user}) => {
@@ -18,6 +20,9 @@ const UserOptions = ({user}) => {
     const [open, setOpen]= useState(false);
     const alert=useAlert();
     const options = [
+      { icon: <HomeIcon />, name:"Home", func: home },
+
+      { icon: <ProductionQuantityLimitsIcon />, name:"Products", func: products },
       { icon: <ShoppingCartIcon style={{color:cartItems.length>0?"burlywood":"unset"}} />, name: `Cart(${cartItems.length}))`, func: cart },
         { icon: <ListAltIcon />, name: "Orders", func: orders },
         { icon: <PersonIcon />, name: "Profile", func: account },
@@ -28,7 +33,12 @@ const UserOptions = ({user}) => {
         options.push(  { icon: <DashboardIcon />, name: "Dashboard", func: dashboard },)
       }
 
-
+      function home(){
+        navigate("/");
+    }
+      function products(){
+        navigate("/products");
+    }
 function dashboard(){
     navigate("/admin/dashboard");
 }

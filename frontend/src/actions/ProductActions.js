@@ -223,7 +223,7 @@ export const getAllReviews = (id) => async (dispatch) => {
 };
 
 
-// Delete RevieS 
+// Delete Reviews
 export const deleteReviews = (reviewId, productId) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_REVIEW_REQUEST });

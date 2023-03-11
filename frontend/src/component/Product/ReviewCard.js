@@ -3,7 +3,7 @@ import profilePng from "../extra/profilepng.png"
 import {Rating} from "@material-ui/lab"
 const ReviewCard = ({review}) => {
   const options = {
-    value: review.ratings,
+    value: review.rating,
     readOnly: true,
     precision: 0.5,
   };
