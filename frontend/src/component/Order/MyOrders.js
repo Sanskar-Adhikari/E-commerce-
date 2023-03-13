@@ -22,11 +22,11 @@ const MyOrders = () => {
   const { id } = useParams();
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 333, flex: 1 },
+    { field: "id", headerName: "Order ID", minWidth: 400, flex: 1 },
     {
         field: "status",
         headerName: "Status",
-        minWidth: 150,
+        minWidth: 200,
         flex: 0.5,
         cellClassName: (params) => {
             return params.getValue(params.id, "status") === "Delivered"
@@ -39,8 +39,8 @@ const MyOrders = () => {
         field: "itemsQty",
         headerName: "Items Qty",
         type: "number",
-        minWidth: 150,
-        flex: 0.3,
+        minWidth: 215,
+        flex: 0.42,
       },
   
       {
@@ -48,12 +48,12 @@ const MyOrders = () => {
         headerName: "Amount",
         type: "number",
         minWidth: 270,
-        flex: 0.5,
+        flex: 1,
       },
 
       {
         field: "actions",
-        flex: 0.3,
+        flex: 1,
         headerName: "Actions",
         minWidth: 150,
         type: "number",
@@ -105,6 +105,7 @@ const MyOrders = () => {
             disableSelectionOnClick
             className="myOrdersTable"
             autoHeight
+           
           />
 
           <Typography id="myOrdersHeading">{user.name}'s Orders</Typography>
