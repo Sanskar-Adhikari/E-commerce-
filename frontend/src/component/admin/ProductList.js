@@ -57,35 +57,34 @@ const navigate= useNavigate();
 
     const rows = [];
     const columns = [
-        { field: "id", headerName: "Product ID", minWidth: 200, flex: 0.5 },
+        { field: "id", headerName: "Product ID", minWidth: 200, flex: 0.1 },
     
         {
           field: "name",
           headerName: "Name",
-          minWidth: 350,
-          flex: 1,
+          minWidth: 50,
+          flex: 0.2,
         },
         {
           field: "stock",
           headerName: "Stock",
-          type: "number",
-          minWidth: 150,
-          flex: 0.3,
+          minWidth: 50,
+          flex: 0.1,
         },
     
         {
           field: "price",
           headerName: "Price",
           type: "number",
-          minWidth: 270,
-          flex: 0.5,
+          minWidth: 20,
+          flex: 0.1,
         },
     
         {
           field: "actions",
-          flex: 0.3,
+          flex: 0.1,
           headerName: "Actions",
-          minWidth: 150,
+          minWidth: 50,
           type: "number",
           sortable: false,
           renderCell: (params) => {

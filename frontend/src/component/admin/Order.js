@@ -57,12 +57,12 @@ const navigate= useNavigate();
 
     const rows = [];
     const columns = [
-        { field: "id", headerName: "Order ID", minWidth: 333, flex: 1 },
+        { field: "id", headerName: "Order ID", minWidth: 200, flex: 0.3 },
         {
             field: "status",
             headerName: "Status",
-            minWidth: 150,
-            flex: 0.5,
+            minWidth: 100,
+            flex: 0.1,
             cellClassName: (params) => {
                 return params.getValue(params.id, "status") === "Delivered"
                   ? "greenColor"
@@ -83,7 +83,7 @@ const navigate= useNavigate();
             headerName: "Amount",
             type: "number",
             minWidth: 270,
-            flex: 0.5,
+            flex: 0.3,
           },
     
     
