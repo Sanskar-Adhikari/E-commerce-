@@ -56,12 +56,13 @@ const submitHandler=async (e)=>{
                   "Content-Type": "application/json",
                 },
               };
-            
+
               const { data } = await axios.post(
                 "/api/payment/process",
                 paymentData,
                 config
               );
+
               const client_secret = data.client_secret;
               if (!stripe || !elements) return;
               const result = await stripe.confirmCardPayment(client_secret, {

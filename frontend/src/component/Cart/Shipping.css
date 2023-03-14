@@ -5,12 +5,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
   }
   
   .shippingBox {
-    background-color: white;
+    background-color:transparent;
     width: 25vw;
-    height: 90vh;
+    height: 65vh;
     box-sizing: border-box;
     overflow: hidden;
   }

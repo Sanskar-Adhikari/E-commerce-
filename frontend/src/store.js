@@ -30,11 +30,11 @@ const store = configureStore({
 
   middleware: [thunk],
   devTools: true, // enable the Redux DevTools browser extension
-  initialState : {
-    cart:{
-      cartItems:localStorage.getItem("cartItems")? JSON.parse(localStorage.getItem("cartItems")):[],
-      shippingInfo:localStorage.getItem("shippingInfo")?
-      JSON.parse(localStorage.getItem("shippingInfo")):{},
+  preloadedState:{
+      cart:{
+        cartItems:localStorage.getItem("cartItems")? JSON.parse(localStorage.getItem("cartItems")):[],
+        shippingInfo:localStorage.getItem("shippingInfo")?
+        JSON.parse(localStorage.getItem("shippingInfo")):{},
     },
   }
 

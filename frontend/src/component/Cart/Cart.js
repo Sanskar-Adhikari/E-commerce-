@@ -5,9 +5,10 @@ import {useSelector, useDispatch} from "react-redux"
 import { addItemsToCart, removeItemsFromCart } from '../../actions/cartAction';
 import { Typography } from "@material-ui/core";
 import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
+    const navigate= useNavigate();
     const dispatch= useDispatch();
     const {cartItems} = useSelector((state)=>state.cart);
 
@@ -34,7 +35,7 @@ const deleteCartItems=(id)=>{
 }
 
 const checkoutHandler = ()=>{
-    Navigate("/login?redirect=shipping")
+    navigate(`/shipping`)
 }
 
 

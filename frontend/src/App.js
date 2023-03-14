@@ -72,7 +72,16 @@ async function getStripeApiKey(){
           <Route exact path="/me/update" element={<UpdateProfile/>}/>
           <Route exact path="/password/update" element={<UpdatePassword/>}/>
           <Route exact path="/shipping" element={<Shipping/>}/>
-          {stripeApiKey&&<Route path="/process/payment" element={  <Elements stripe={loadStripe(stripeApiKey)}>component={Payment}</Elements>}/>}
+          {stripeApiKey && (
+  <Route
+    path="/process/payment"
+    element={
+      <Elements stripe={loadStripe(stripeApiKey)}>
+        <Payment />
+      </Elements>
+    }
+  />
+)}
           <Route exact path="/success" element={<OrderSuccess/>}/>
           <Route exact path="/orders" element={<MyOrders/>}/>
           <Route exact path="/order/confirm" element={<ConfirmOrder/>}/>

@@ -42,8 +42,9 @@ const Shipping = () => {
   };
 
   return (
+    
     <Fragment>
-      <LoadingScreen title="Shipping Details" />
+      
 
       <CheckoutSteps activeStep={0} />
 

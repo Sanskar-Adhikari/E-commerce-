@@ -23,6 +23,7 @@ const {error, loading, isAuth} = useSelector((state)=>state.user)
   const registerTab = useRef(null);
   const switcherTab = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const loginSubmit = (e) => {
     e.preventDefault();
@@ -66,7 +67,6 @@ const {error, loading, isAuth} = useSelector((state)=>state.user)
   const [avatar, setAvatar] = useState();
   const [avatarPreview, setAvatarPreview] = useState('/logo192.png');
   const [isLoginHidden, setIsLoginHidden] = useState(false);
-  const location = useLocation();
 
  const redirect=location.search ? location.search.split("=")[1]: "/account";
 console.log(redirect);
@@ -77,7 +77,6 @@ console.log(redirect);
   }
   if(isAuth)
   { 
-    //console.log(location);
     navigate(redirect)
   }
  },[alert, dispatch, error, isAuth, navigate, redirect, location])

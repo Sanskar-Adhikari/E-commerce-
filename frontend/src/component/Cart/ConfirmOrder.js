@@ -66,7 +66,7 @@ const navigate= useNavigate();
                     {item.name}
                 </Link>
                 <span>
-                    {item.quantity} * ${item.price} = {" "}<b>$${item.price*item.quantity}</b>
+                    {item.quantity} * ${item.price} = {" "}<b>${item.price*item.quantity}</b>
                 </span>
                 </div>
 
@@ -81,23 +81,23 @@ const navigate= useNavigate();
                     <Typography>Order Summary</Typography>
                     <div>
                         <div>
-                            <p>Total:</p><span>$${subtotal}</span>
+                            <p>Total:</p><span>${subtotal}</span>
                         </div>
                         <div>
-                            <p>Shipping Charges:</p><span>$${shippingCharges}</span>
+                            <p>Shipping Charges:</p><span>${shippingCharges}</span>
                         </div>
                         <div>
-                            <p>TAX:</p><span>$${tax}</span>
+                            <p>TAX:</p><span>${tax}</span>
                         </div>
                     </div>
 <p>
     <b>Total cost: </b>
 </p>
 <span>
-    $${totalPrice}
+    ${totalPrice}
 </span>
                 </div>
-                <button onClick={proceedToPayment}>Proceed</button>
+                <button className='proceed' onClick={proceedToPayment}>Proceed</button>
         </div>
 
     </div>
