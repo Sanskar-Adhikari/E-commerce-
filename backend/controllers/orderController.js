@@ -89,13 +89,13 @@ exports.updateOrder = catchAsyncErrors(async(req,res,next)=>{
         return next(new ErrorHandler("you have already delivered this product", 400));
     }
 
-        if(req.bodu.status==="Shipped")
+        if(req.body.status==="Shipped")
         {
             order.orderItems.forEach(async (my_order)=>{
                 await updateStock(my_order.product, my_order.quantity);
             })
         }
-
+console.log(req.body.status)
     order.orderStatus = req.body.status;
     if(req.body.status==="Delivered")
     {   

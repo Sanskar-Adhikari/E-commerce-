@@ -37,6 +37,7 @@ import ProcessOrder from './component/admin/ProcessOrder';
 import UsersList from './component/admin/UsersList';
 import UpdateUser from './component/admin/UpdateUser';
 import ProductReviews from './component/admin/ProductReviews';
+import About from './component/About/About';
 
 function App() {
   
@@ -66,6 +67,7 @@ async function getStripeApiKey(){
         <Route exact path="/password/forgot" element={<ForgotPassword/>}/>
         <Route exact path="/password/reset/:token" element={<ResetPassword/>}/>
         <Route path="/cart" element={<Cart/>} />
+        <Route path="/about" element={<About/>} />
 
         <Route element={<ProtectedRoute />}>
           <Route exact path="/account" element={<Profile/>}/>
