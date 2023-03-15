@@ -38,7 +38,7 @@ import UsersList from './component/admin/UsersList';
 import UpdateUser from './component/admin/UpdateUser';
 import ProductReviews from './component/admin/ProductReviews';
 import About from './component/About/About';
-
+import Contact from './component/Contact/Contact'
 function App() {
   
 const {isAuth, user} = useSelector(state=>state.user)
@@ -68,6 +68,7 @@ async function getStripeApiKey(){
         <Route exact path="/password/reset/:token" element={<ResetPassword/>}/>
         <Route path="/cart" element={<Cart/>} />
         <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact/>} />
 
         <Route element={<ProtectedRoute />}>
           <Route exact path="/account" element={<Profile/>}/>
