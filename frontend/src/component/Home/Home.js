@@ -30,7 +30,7 @@ const Home = () => {
         <Fragment>
           <TopHeading title="SENIOR PROJECT" />
           <div className="banner">
-            <p> Welcome to buy, sell , giveaway</p>
+            <p> Welcome to buy, sell, giveaway</p>
             <h1>Find amazing resouces</h1>
             <a href="#container">
               <button className="myButton">Scroll</button>

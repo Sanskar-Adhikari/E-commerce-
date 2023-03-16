@@ -91,11 +91,11 @@
     position: relative;
   }
   
-  label, input, textarea {
+  .contact-form-wrapper>label,   .contact-form-wrapper>input,   .contact-form-wrapper>textarea {
     font-family: 'Poppins', sans-serif;
   }
   
-  label {
+  .form-item>label {
     position: absolute;
     top: 10px;
     left: 2%;
@@ -105,7 +105,7 @@
     user-select: none;
   }
   
-  input, textarea {
+  .form-item>input,   .form-item>textarea {
     width: 100%;
     outline: 0;
     border: 1px solid #ccc;
@@ -115,10 +115,10 @@
     font-size: clamp(15px, 1.5vw, 18px);
   }
   
-  input:focus+label, 
-  input:valid+label, 
-  textarea:focus+label, 
-  textarea:valid+label {
+  .contact-form-wrapper>input:focus+label, 
+  .contact-form-wrapper>input:valid+label, 
+  .contact-form-wrapper>  textarea:focus+label, 
+    .contact-form-wrapper>textarea:valid+label {
     font-size: clamp(13px, 1.3vw, 16px);
     color: #777;
     top: -20px;

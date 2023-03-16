@@ -16,15 +16,15 @@ import {useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const UpdateProduct = () => {
-    const categories = ["Books",
-"Notes",
-"StudyMaterial",
-"Tops",
-"Bottoms",
-"laptop",
-"SmartPhones",
-"Shoes",
-"DormItems"]
+  const categories = ["Books",
+  "Notes",
+  "StudyMaterial",
+  "Past Papers",
+  "Study Guides",
+  "laptop",
+  "SmartPhones",
+  "Shoes",
+  "DormItems"]
 const {id} = useParams();
 
 const productId=id;

@@ -1,94 +1,94 @@
 .myButton {
-    background: linear-gradient(white, white) padding-box,
-                linear-gradient(to right, darkblue, darkorchid) border-box;
-    border-radius: 25em;
-    border: 4px solid transparent;
-    padding: 0.8rem;
-	transition: color .3s ease-in-out, box-shadow .5s ease-in-out;
-  }
-
-  .myButton:hover{
-    color:rgb(223, 150, 150);
-    box-shadow: inset 100px 0 0 0 #231957;
-  }
-
-.banner{
-    background: white;
-    background-image:white;
-    height:100vh;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    color: black;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, darkblue, darkorchid) border-box;
+  border-radius: 25em;
+  border: 4px solid transparent;
+  padding: 0.8rem;
+  transition: color 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-.banner > h1{
-    height:30%;
-    margin: 10px;
-    font:600 2.5vmax "Sans-serif";
-    padding: 3px;
+.myButton:hover {
+  color: rgb(223, 150, 150);
+  box-shadow: inset 100px 0 0 0 #231957;
 }
 
-.homeHeading{
+.banner {
+  background: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  font-size: 30px;
-  border-bottom: 1px solid ;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.banner > h1 {
+  height: 30%;
+  margin: 10px;
+  font-weight: bold;
+  font-size: 3.5rem;
+  padding: 3px;
+}
+
+.homeHeading {
+  text-align: center;
+  font-size: 3rem;
+  border-bottom: 1px solid;
   max-width: 20%;
   padding: 10px;
   margin: 10px auto;
+  font-weight: bold;
 }
 
-.productCard{
+.productCard {
   color: rgb(44, 11, 103);
-  width:250px;
-  display:flex;
+  width: 250px;
+  display: flex;
   flex-direction: column;
   text-decoration: none;
   margin: 20px solid;
   margin-bottom: 40px;
   margin-top: 10px;
-  transition: all 1.5s;
+  transition: all 1s;
   padding: 18px;
   border: #3589a5 4px solid;
   background-color: rgb(232, 226, 249);
+  box-shadow: 5px 5px 5px rgba(20, 20, 20, 0.2);
 }
 
-.productCard >img{
-  width:250px;
-  height:250px;
+.productCard > img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
-.productCard >div{
+.productCard > div {
   margin: 10px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
 
-
-
-.productSpans{
-  margin-left: 10px;
-  margin-top: 6px;
-  font:300 10px;
-}
-.productCard >p {
-  font-size: 30px;
-  margin: 20px 10px;
-  margin-bottom: 0;
+.productCard > div > span {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.productCard>span  {
-  margin: 20px 15px;
-  font-size: 22px;
+.productCard > p {
+  font-size: 2rem;
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .productCard:hover {
-  box-shadow:5px 5px 5px rgba(20, 20, 20, 0.30);
-  transform: translateY(-1vmax);
+  transform: translateY(-10px);
   background-color: rgb(204, 213, 227);
+  box-shadow: 5px 5px 10px rgba(20, 20, 20, 0.3);
 }
 
 @media screen and (max-width:600px) {
