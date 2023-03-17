@@ -1,8 +1,21 @@
 const mongoose = require("mongoose");
-const { isNumberObject } = require("util/types");
 
+
+/**/
+/*
+Order Schema
+NAME
+    orderSchema
+SYNOPSIS
+    This schema defines the structure of the "Order" documents in the "orders" collection in MongoDB.
+DESCRIPTION
+    A Mongoose schema for defining the structure of an order document in the MongoDB database. The schema includes the
+    shipping information, order items, user, payment information, order status, and other related fields.
+RETURNS
+The Order schema instance
+*/
+/**/
 const orderSchema = new mongoose.Schema({
-
     shippingInfo:{
         address:{
             type:String, 
@@ -29,7 +42,6 @@ const orderSchema = new mongoose.Schema({
             required:true
         },
     },
-
     orderItems:[
         {
         name:{
@@ -60,7 +72,6 @@ const orderSchema = new mongoose.Schema({
             ref:"User",
             required:true,
         },
-
     paymentInfo:{
         id:{
             type:String,
@@ -79,7 +90,6 @@ const orderSchema = new mongoose.Schema({
         type:Number,
         default:0,
         required:true
-
     },
     taxPrice:{
         type:Number,
@@ -90,8 +100,6 @@ const orderSchema = new mongoose.Schema({
         type:Number,
         required:true,
         default:0,
-        
-
     },
     totalPrice:{
         type:Number,

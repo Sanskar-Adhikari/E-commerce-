@@ -95,8 +95,22 @@ exports.getAllProducts= catchAsyncErrors(async(req, res,next) =>{
 
 
 
-
-//get product details
+/**/
+/*
+getProductDetails()
+NAME
+    getProductDetails - Retrieve details for a specific product.
+SYNOPSIS
+    getProductDetails = async(req, res, next);
+    req -> Request object that contains the ID of the product.
+    res -> Response object that carries the product information and the status code back to the client.
+    next -> The next middleware function in the pipeline.
+DESCRIPTION
+    Retrieves details for a specific product using its ID.
+RETURNS
+    Returns the product information as a part of the response object if successful in retrieving the product.
+*/
+/**/
 exports.getProductDetails= catchAsyncErrors(async(req,res,next)=>{
     const product= await Product.findById(req.params.id);
     if(!product)
@@ -109,58 +123,94 @@ exports.getProductDetails= catchAsyncErrors(async(req,res,next)=>{
     });
 
 });
+/*  getProductDetails = async(req, res, next); */
 
-//update product --admin
-exports.updateProduct= catchAsyncErrors(async(req,res,next)=>{
-    let product =  await Product.findById(req.params.id);
-    if(!product)
-    {
-        return next(new ErrorHandler("product not found",404) );
-    }
 
-    let images = [];
-  
-    if (typeof req.body.images === "string") {
-      images.push(req.body.images);
-    } else {
-      images = req.body.images;
-    }
-  if(images!== undefined)
+
+/**/
+/*
+updateProduct()
+NAME
+    updateProduct - Update a product by its ID. It is admin route
+SYNOPSIS
+    updateProduct = async(req, res, next);
+    req -> Request object that contains the ID of the product to be updated and its updated information.
+    res -> Response object that carries the updated product information and the status code back to the client.
+    next -> The next middleware function in the pipeline.
+DESCRIPTION
+    Updates the information for a specific product using its ID. It first checks if the product with the provided 
+    ID exists in the database or not. If the product exists, it updates the product information by replacing the 
+    old information with the new one. If the images are also included in the request body, then it 
+    deletes the old images from the cloudinary and uploads the new images. 
+RETURNS
+    Returns the updated product information as a part of the response object if successful in updating the product.
+*/
+/**/
+exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
+  let product = await Product.findById(req.params.id);
+  if (!product)
   {
-        // Deleting Images From Cloudinary
-        for (let i = 0; i < product.images.length; i++) {
-            await cloudinary.v2.uploader.destroy(product.images[i].public_id);
-          }
+      return next(new ErrorHandler("product not found", 404));
+  }
 
-          const imagesLinks = [];
-  
-          for (let i = 0; i < images.length; i++) {
-            const result = await cloudinary.v2.uploader.upload(images[i], {
+  let images = [];
+  if (typeof req.body.images === "string")
+  {
+      images.push(req.body.images);
+  } else
+  {
+      images = req.body.images;
+  }
+  if (images !== undefined)
+   {
+      // Deleting Images From Cloudinary
+      for (let i = 0; i < product.images.length; i++) {
+          await cloudinary.v2.uploader.destroy(product.images[i].public_id);
+      }
+
+      const imagesLinks = [];
+      for (let i = 0; i < images.length; i++) {
+          const result = await cloudinary.v2.uploader.upload(images[i], {
               folder: "products",
-            });
-        
-            imagesLinks.push({
+          });
+
+          imagesLinks.push({
               public_id: result.public_id,
               url: result.secure_url,
-            });
-          }
-          req.body.images = imagesLinks;
-
-
+          });
+      }
+      req.body.images = imagesLinks;
   }
-    product= await Product.findByIdAndUpdate(req.params.id, req.body,{
-        new:true,
-        runValidators:true,
-        useFindAndModify:false
-    });
-    res.status(200).json({
-        success:true,
-        product
-    })
+  product = await Product.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+      useFindAndModify: false
+  });
+  res.status(200).json({
+      success: true,
+      product
+  })
 });
+/* updateProduct = async(req, res, next); */
 
-// Delete Product
 
+
+/**/
+/*
+deleteProduct()
+NAME
+    deleteProduct - Delete a specific product. It is an admin route
+SYNOPSIS
+    deleteProduct = async(req, res, next);
+    req -> Request object that contains the ID of the product.
+    res -> Response object that carries the status message back to the client.
+    next -> The next middleware function in the pipeline.
+DESCRIPTION
+    Deletes a specific product using its ID and removes its images from Cloudinary.
+RETURNS
+    Returns a success message as a part of the response object if successful in deleting the product.
+*/
+/**/
 exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
     const product = await Product.findById(req.params.id);
     if (!product) {
@@ -179,9 +229,28 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
       message: "Product Delete Successfully",
     });
   });
+  /* deleteProduct = async(req, res, next); */
 
 
-//function to create new review or update the review
+
+/**/
+/*
+createProductReview()
+NAME
+    createProductReview - Create a review for a specific product.
+SYNOPSIS
+    createProductReview = async(req, res, next);
+    req -> Request object that contains the rating, comment, and productId of the product.
+    res -> Response object that carries a success status back to the client.
+    next -> The next middleware function in the pipeline.
+DESCRIPTION
+    Creates a review for a specific product using the rating and comment provided in the request body.
+    If the user has already reviewed the product it updates the old review with new one and changes
+    the average star points as per the review as well.
+RETURNS
+    Returns a success status as a part of the response object if successful in creating the review.
+*/
+/**/
 exports.createProductReview= catchAsyncErrors(async(req,res,next)=>{
     const {rating, comment, productId}= req.body;
     const review={
@@ -192,7 +261,6 @@ exports.createProductReview= catchAsyncErrors(async(req,res,next)=>{
     };
 
     const product = await Product.findById(productId);
-
     const isReviewed = product.reviews.find((r)=>r.user.toString()===req.user._id.toString())
     if(isReviewed)
     {
@@ -219,8 +287,26 @@ exports.createProductReview= catchAsyncErrors(async(req,res,next)=>{
         success:true
     })
 })
+/* createProductReview = async(req, res, next); */
 
-//get all reviews of one product
+
+
+/**/
+/*
+getProductReviews()
+NAME
+    getProductReviews - Retrieve reviews for a specific product.
+SYNOPSIS
+    getProductReviews = async(req, res, next);
+    req -> Request object that contains the ID of the product.
+    res -> Response object that carries the reviews information and the status code back to the client.
+    next -> The next middleware function in the pipeline.
+DESCRIPTION
+    Retrieves reviews for a specific product using its ID.
+RETURNS
+    Returns the reviews information as a part of the response object if successful in retrieving the reviews for the product.
+*/
+/**/
 exports.getProductReviews = catchAsyncErrors (async(req, res, next)=>{
     const product = await Product.findById(req.query.id);
     if(!product)
@@ -232,15 +318,33 @@ exports.getProductReviews = catchAsyncErrors (async(req, res, next)=>{
         reviews:product.reviews,
     })
 })
+/* getProductReviews = async(req, res, next); */
 
-//delete review
+
+
+/**/
+/*
+deleteReviews()
+NAME
+    deleteReviews - Delete a review for a specific product.
+SYNOPSIS
+    deleteReviews = async(req, res, next);
+    req -> Request object that contains the ID of the product and the ID of the review to be deleted.
+    res -> Response object that carries the status code back to the client.
+    next -> The next middleware function in the pipeline.
+DESCRIPTION
+    Deletes a review for a specific product using the product ID and review ID. It also updates the product's ratings, number of reviews, 
+    and the reviews array in the product document in the database.
+RETURNS
+    Returns a success message and the status code as a part of the response object if the review is successfully deleted.
+*/
+/**/
 exports.deleteReviews = catchAsyncErrors (async(req, res, next)=>{
     const product = await Product.findById(req.query.productId);
     if(!product)
     {
         return next(new ErrorHandler("product not found",404) );
     }
-
     const reviews = product.reviews.filter((r)=>r._id.toString()!== req.query.id.toString())
     let average=0
     reviews.forEach((r)=>{
@@ -273,9 +377,26 @@ exports.deleteReviews = catchAsyncErrors (async(req, res, next)=>{
         success:true,
     })
 })
+/* deleteReviews = async(req, res, next); */
 
 
-//get all products--admin
+
+/**/
+/*
+getAdminProducts()
+NAME
+    getAdminProducts - Retrieve all products for the admin.
+SYNOPSIS
+    getAdminProducts = async(req, res, next);
+    req -> Request object.
+    res -> Response object that carries the product information and the status code back to the client.
+    next -> The next middleware function in the pipeline.
+DESCRIPTION
+    Retrieves all products for the admin to manage.
+RETURNS
+    Returns the products information as a part of the response object if successful in retrieving all products for the admin.
+*/
+/**/
 exports.getAdminProducts= catchAsyncErrors(async(req, res,next) =>{
 const products= await Product.find()
     res.status(200).json({
@@ -283,3 +404,4 @@ const products= await Product.find()
         products,
     })
 });
+/* getAdminProducts = async(req, res, next); */
