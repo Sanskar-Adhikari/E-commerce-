@@ -1,33 +1,49 @@
 const express = require("express");
-const app= express();
 const cookieParser = require("cookie-parser")
 const bodyParser = require("body-parser")
 const fileUpload = require("express-fileupload")
 const errorMiddleware= require("./middleware/error");
 const dotenv = require("dotenv")
 
-//config
-dotenv.config({path:"backend/config/config.env"});
+// Load environment variables from the .env file
+dotenv.config({ path: "backend/config/config.env" });
 
+// Initialize the Express application
+const app = express();
 
-app.use(express.json());
-app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended:true}))
-app.use(fileUpload())
+// Configure middleware for handling incoming requests
+// Parse incoming requests with JSON payloads
+app.use(express.json()); 
 
-//importing the routes
-const product= require("./routes/productRoute");
-const user= require("./routes/userRoute");
-const order = require("./routes/orderRoute")
-const payment = require("./routes/paymentRoute")
+// Parse cookie headers and populate req.cookies
+app.use(cookieParser()); 
 
-app.use("/api/v1", product);
-app.use("/api/v1",user);
-app.use("/api",order);
-app.use("/api",payment);
+// Parse incoming requests with URL-encoded payloads
+app.use(bodyParser.urlencoded({ extended: true })); 
 
+// Enable file uploads
+app.use(fileUpload()); 
 
-//middleware for error 
+// Define routes for handling incoming requests
+const product = require("./routes/productRoute");
+const user = require("./routes/userRoute");
+const order = require("./routes/orderRoute");
+const payment = require("./routes/paymentRoute");
+
+// Route for product-related requests
+app.use("/api/v1", product); 
+
+// Route for user-related requests
+app.use("/api/v1", user); 
+
+// Route for order-related requests
+app.use("/api", order); 
+
+// Route for payment-related requests
+app.use("/api", payment); 
+
+// Configure middleware for handling errors
 app.use(errorMiddleware);
 
-module.exports= app;
+// Export the configured Express application
+module.exports = app;

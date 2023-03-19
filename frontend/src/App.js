@@ -46,6 +46,7 @@ const [stripeApiKey, setStripeApiKey] = useState("")
 
 async function getStripeApiKey(){
   const {data} = await axios.get("/api/stripeapikey");
+  console.log(data)
   setStripeApiKey(data.stripeApiKey);
 }
 
@@ -69,7 +70,6 @@ async function getStripeApiKey(){
         <Route path="/cart" element={<Cart/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
-
         <Route element={<ProtectedRoute />}>
           <Route exact path="/account" element={<Profile/>}/>
           <Route exact path="/me/update" element={<UpdateProfile/>}/>

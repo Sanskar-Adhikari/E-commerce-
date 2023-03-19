@@ -7,7 +7,8 @@ Order Schema
 NAME
     orderSchema
 SYNOPSIS
-    This schema defines the structure of the "Order" documents in the "orders" collection in MongoDB.
+    orderSchema = new mongoose.Schema
+    This schema defines the structure of the "Order" in the "orders" collection in MongoDB.
 DESCRIPTION
     A Mongoose schema for defining the structure of an order document in the MongoDB database. The schema includes the
     shipping information, order items, user, payment information, order status, and other related fields.
@@ -105,7 +106,6 @@ const orderSchema = new mongoose.Schema({
         type:Number,
         required:true,
         default:0,
-        
     },
     orderStatus:{
         type:String,
@@ -118,5 +118,6 @@ const orderSchema = new mongoose.Schema({
         default:Date.now,
     }
 })
-
+/* orderSchema = new mongoose.Schema */
 module.exports = mongoose.model("Order",orderSchema);
+

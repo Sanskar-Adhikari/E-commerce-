@@ -1,5 +1,21 @@
 const mongoose= require("mongoose");
 
+
+/**/
+/*
+Product Schema
+NAME
+    productSchema
+SYNOPSIS
+    productSchema= new mongoose.Schema
+    This schema defines the structure of the "Product" in the "products" collection in MongoDB.
+DESCRIPTION
+    A Mongoose schema for defining the structure of a product document in the MongoDB database. The schema includes the
+    product name, description, price, ratings, images, category, stock, number of reviews, reviews, user, and creation date.
+RETURNS
+    The Product schema instance
+*/
+/**/
 const productSchema= new mongoose.Schema({
     name:{
         type:String,
@@ -78,5 +94,5 @@ const productSchema= new mongoose.Schema({
         default:Date.now
     }
 })
-
+/* productSchema= new mongoose.Schema */
 module.exports=mongoose.model("Product",productSchema);

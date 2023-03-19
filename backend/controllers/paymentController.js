@@ -52,7 +52,8 @@ RETURNS
     Returns the API key information as a part of the response object.
 */
 /**/
-exports.sendStripeApiKey = catchAsyncErrors(async(res)=>{
-    res.status(200).json({stripeApiKey: process.env.STRIPE_API_KEY})
-});
+exports.sendStripeApiKey = catchAsyncErrors(async (req, res, next) => {
+    res.status(200).json({ stripeApiKey: process.env.STRIPE_API_KEY });
+  });
+  
 /* sendStripeApiKey = async(res); */

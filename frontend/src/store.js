@@ -25,7 +25,6 @@ const store = configureStore({
     userDetails: userDetailsReducer,
     productReviews: productReviewsReducer,
     review: reviewReducer,
-    
   },
 
   middleware: [thunk],
