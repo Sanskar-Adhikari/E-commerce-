@@ -7,11 +7,7 @@ import "../Cart/ConfirmOrder.css";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  getOrderDetails,
-  clearErrors,
-  updateOrder,
-} from "../../actions/orderAction";
+import {getOrderDetails,clearErrors,updateOrder,} from "../../actions/orderAction";
 import { useAlert } from "react-alert";
 import LoadingScreen from "../LoadingComponent/LoadingScreen";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
@@ -28,7 +24,7 @@ SYNOPSIS
     ProcessOrder();
     No props passed.
 DESCRIPTION
-    This React component renders order details and form for processing an order. It allows for the updating 
+    This React component renders order details and form for processing an order. It allows for updating 
     of the order status and displays relevant order details.
 RETURNS
     Returns the JSX for Processing Order.
@@ -61,15 +57,18 @@ const ProcessOrder = () => {
 
   // UseEffect hook to handle error/success messages and dispatch necessary actions when the component mounts or updates
   useEffect(() => {
-    if (error) {
+    if (error) 
+    {
       alert.error(error);
       dispatch(clearErrors());
     }
-    if (updateError) {
+    if (updateError) 
+    {
       alert.error(updateError);
       dispatch(clearErrors());
     }
-    if (isUpdated) {
+    if (isUpdated) 
+    {
       alert.success("Order Updated!");
       dispatch({ type: UPDATE_ORDER_RESET });
     }

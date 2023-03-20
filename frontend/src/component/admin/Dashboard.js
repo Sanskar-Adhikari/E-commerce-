@@ -40,7 +40,8 @@ const Dashboard = () => {
   // Count the number of products that are out of stock
   products &&
     products.forEach((item) => {
-      if (item.Stock === 0) {
+      if (item.Stock === 0) 
+      {
         outOfStock += 1;
       }
     });

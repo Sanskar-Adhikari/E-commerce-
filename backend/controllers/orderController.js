@@ -128,7 +128,7 @@ RETURNS
     Returns the list of all the orders along with the status code 200 as a part of the response object.
 */
 /**/
-exports.getAllOrder = catchAsyncErrors(async(res,next)=>{
+exports.getAllOrder = catchAsyncErrors(async(req,res,next)=>{
     const orders = await Order.find();
     let totalAmount = 0;  //to show total sales of a admin
     orders.forEach(order=>{
@@ -137,6 +137,7 @@ exports.getAllOrder = catchAsyncErrors(async(res,next)=>{
     res.status(200).json({
         success:true,
         orders,
+        totalAmount,
     })
 })
 /* getAllOrder = async(req, res, next); */

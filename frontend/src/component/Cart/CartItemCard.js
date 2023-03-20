@@ -1,6 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./CartItemCard.css"
+
+
+/**/
+/*
+CartItemCard()
+NAME
+    CartItemCard
+SYNOPSIS
+    CartItemCard();
+DESCRIPTION
+    
+RETURNS
+    
+*/
+/**/
 const CartItemCard = ({item, deleteCartItems}) => {
   return (
   <div className='CartItemCard'>
@@ -13,5 +28,6 @@ const CartItemCard = ({item, deleteCartItems}) => {
   </div>
   )
 }
+/* CartItemCard(); */
 
 export default CartItemCard

@@ -60,11 +60,13 @@ const NewProduct = () => {
 
   // Set up an effect hook to handle changes in error and success state variables
   useEffect(() => {
-    if (error) {
+    if (error) 
+    {
       alert.error(error);
       dispatch(clearErrors());
     }
-    if (success) {
+    if (success) 
+    {
       alert.success("Product Created");
       navigate("/admin/dashboard");
       dispatch({ type: NEW_PRODUCT_RESET });

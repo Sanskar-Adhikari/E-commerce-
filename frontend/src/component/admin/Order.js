@@ -25,7 +25,7 @@ SYNOPSIS
 DESCRIPTION
     This is a React component that displays a table of all orders fetched from the backend. It includes columns for
     order ID, status, items quantity, and total amount, as well as buttons for editing and deleting individual orders.
-    It also includes logic for handling successful and failed order deletions, and displaying error and success messages.
+    It also includes logic for handling successful and failed order deletions/update, and displaying error and success messages.
 RETURNS
     Returns the JSX for getting all the Order details for admin users.
 */
@@ -154,10 +154,10 @@ const Order = () => {
           <h1 id="productListHeading">ALL PRODUCTS</h1>
           {/* Data grid to display the list of orders */}
           <DataGrid
-            rows={rows}
-            columns={columns}
-            pageSize={10}
-            disableSelectionOnClick
+            rows={rows}  // rows to be displayed
+            columns={columns}  // columns to be displayed
+            pageSize={10}  // number of rows per page
+            disableSelectionOnClick   // disable row selection on click
             className="productListTable"
             autoHeight
           />
