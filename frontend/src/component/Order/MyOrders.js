@@ -9,7 +9,6 @@ import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
 import LaunchIcon from "@material-ui/icons/Launch";
 import TopHeading from "../TopHeading";
-import { useParams } from 'react-router-dom';
 
 
 const MyOrders = () => {
@@ -19,7 +18,6 @@ const MyOrders = () => {
 
   const { loading, error, orders } = useSelector((state) => state.myOrders);
   const { user } = useSelector((state) => state.user);
-  const { id } = useParams();
 
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 400, flex: 1 },
