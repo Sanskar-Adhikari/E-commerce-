@@ -359,6 +359,22 @@ export const productReducer = (state = {}, action) => {
 /* productReducer = (state ,action) */
 
 
+
+/**/
+/*
+reviewReducer()
+NAME
+    reviewReducer 
+SYNOPSIS
+    reviewReducer = (state ,action)
+    state -> an object representing the current state of the reviews
+    action -> an object containing the type of action being performed and any payload data associated with it
+DESCRIPTION
+    This reducer function handles actions related to deleting reviews. It takes in a state object and an action object, and returns a new state object based on the action type.
+RETURNS
+    The updated state object based on the action type.
+*/
+/**/
 export const reviewReducer = (state = {}, action) => {
   switch (action.type) {
     case DELETE_REVIEW_REQUEST:
@@ -403,8 +419,25 @@ export const reviewReducer = (state = {}, action) => {
       return state;
   }
 };
+/* reviewReducer = (state ,action) */
 
 
+
+/**/
+/*
+productReviewsReducer()
+NAME
+    productReviewsReducer 
+SYNOPSIS
+    productReviewsReducer = (state ,action)
+    state -> an object representing the current state of the product reviews, with properties such as loading, error, and reviews
+    action -> an object containing the type of action being performed and any payload data associated with it
+DESCRIPTION
+    This reducer function handles actions related to retrieving all reviews for a product. It takes in a state object and an action object, and returns a new state object based on the action type. 
+RETURNS
+    The updated state object based on the action type.
+*/
+/**/
 export const productReviewsReducer = (state = { reviews: [] }, action) => {
   switch (action.type) {
     case ALL_REVIEW_REQUEST:
@@ -441,3 +474,4 @@ export const productReviewsReducer = (state = { reviews: [] }, action) => {
       return state;
   }
 };
+/* productReviewsReducer = (state ,action) */
