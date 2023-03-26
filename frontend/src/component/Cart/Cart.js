@@ -60,6 +60,11 @@ const Cart = () => {
     navigate(`/shipping`);
   };
 
+  // Function to handle the checkout process
+  const contactme = () => {
+    navigate(`/contact`);
+  };
+
   return (
     <Fragment>
       {/* Check if cart is empty */}
@@ -134,6 +139,9 @@ const Cart = () => {
               {/* Render checkout button */}
               <div className="checkOutBtn">
                 <button onClick={checkoutHandler}>Check Out</button>
+              </div>
+              <div className="checkOutBtn contactme">
+                <button onClick={contactme}>Contact Admin</button>
               </div>
             </div>
           </div>

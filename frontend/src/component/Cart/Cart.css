@@ -107,12 +107,17 @@ font-weight: 800;
     display: flex;
     justify-content: flex-end;
 }
+.contactme > button{
+  margin-top: 20px;
+  margin-right: -62%;
+}
 
 .checkOutBtn >button{
     background-color: rgb(170, 185, 240);
     border-radius: 15px;
     padding: 5px;
 }
+
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {

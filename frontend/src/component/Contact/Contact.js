@@ -56,21 +56,18 @@ const Contact = () => {
 
         {/* Contact form with Name, Email and Message fields */}
             <form
-              action="mailto:seniorproject.sp23@gmail.com"
+              action="mailto:seniorproject.sp23@gmail.com?subject=Product%20Query"
               method="post"
               encType="text/plain"
             >
               <div class="form-item">
-                <input type="text" name="sender" required />
-                <label>Name:</label>
+                <input placeholder="Name" type="text" name="sender" required />
               </div>
               <div class="form-item">
-                <input type="text" name="email" required />
-                <label>Email:</label>
+                <input placeholder="Email" type="text" name="email" required />
               </div>
               <div class="form-item">
-                <textarea class="" name="message" required></textarea>
-                <label>Message:</label>
+                <textarea placeholder="Message:" class="" name="message" required></textarea>
               </div>
               <button class="submit-btn">Send</button>
             </form>
