@@ -91,3 +91,11 @@
   color: rgb(19, 69, 113);
   
 }
+.topics>p{
+  color:rgb(209, 85, 85);
+  font-size: larger;
+  margin-top: 50px;
+  margin-left: 40%;
+  font-size: 2rem;
+  font-style: oblique;
+}

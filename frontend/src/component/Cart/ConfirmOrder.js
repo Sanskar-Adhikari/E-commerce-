@@ -76,7 +76,8 @@ const ConfirmOrder = () => {
         <div className="confirmShippingArea">
 
           {/* Title for the shipping info section */}
-          <Typography>Shipping Info</Typography>
+          <div className="topics">
+          <Typography>Shipping Info</Typography></div>
 
           {/* Shipping info details */}
           <div className="confirmshippingAreaBox">
