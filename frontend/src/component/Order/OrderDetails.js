@@ -65,6 +65,7 @@ const OrderDetails = () => {
                   Order #{order && order._id}
                 </Typography>
 
+              <div>
                 {/* Display the shipping information */}
                 <Typography>Shipping Info</Typography>
                 <div className="orderDetailsContainerBox">
@@ -147,6 +148,7 @@ const OrderDetails = () => {
                       </div>
                     ))}
                 </div>
+              </div>
               </div>
             </div>
           </Fragment>

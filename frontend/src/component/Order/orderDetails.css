@@ -7,7 +7,7 @@
     margin: 4vmax 0;
     color: rgb(38, 88, 132);
   }
-  
+
   .orderDetailsContainer {
     padding: 5vmax;
     padding-bottom: 0%;
@@ -20,6 +20,7 @@
   .orderDetailsContainerBox,
   .orderDetailsCartItemsContainer {
     margin: 2vmax;
+    font-size: 20px;
   }
   
   .orderDetailsContainerBox > div {
@@ -28,12 +29,12 @@
   }
   
   .orderDetailsContainerBox > div > p {
-    font: 400 1vmax "Roboto";
+    font: 400 1.3vmax "Roboto";
     color: black;
   }
   .orderDetailsContainerBox > div > span {
     margin: 0 1vmax;
-    font: 100 1vmax "Roboto";
+    font: 100 1.3vmax "Roboto";
     color: #575757;
   }
   
@@ -68,6 +69,9 @@
     font: 100 1vmax "Roboto";
     color: #5e5e5e;
   }
+  .MuiTypography-body1 {
+    font-size: 1.8rem !important;
+}
   
   @media screen and (max-width: 600px) {
     .orderDetailsContainer > p {

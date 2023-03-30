@@ -1,9 +1,20 @@
 .newProductContainer {
-    width: 100vw;
+    width: 60vw;
     box-sizing: border-box;
-    background-color:rgb(113, 218, 183);
+    background-color:rgb(150, 223, 199);
     border-left: 2px solid rgba(0, 0, 0, 0.158);
-    padding-left: 240px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+.orderProductContainer{
+  width:90vh;
+}
+  .orderProductContainer{
+    width: 65vw;
+    box-sizing: border-box;
+    background-color:rgb(150, 223, 199);
+    border-left: 2px solid rgba(0, 0, 0, 0.158);
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -101,3 +112,33 @@
   #createProductBtn:hover {
     background-color: rgb(179, 66, 46);
   }
+
+ .confirmshippingArea{
+  background-color: transparent;
+  padding: 20px;
+ }
+
+ .confirmOrderItemsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px; /* add margin bottom to separate each item */
+}
+
+.orderItem > span {
+  padding-left: 10px;
+}
+
+.orderItem img {
+  margin-right: 16px; /* add margin right to separate the image from text */
+  height: 50px;
+  width: 50px;
+}
+
+.itemDetails {
+  flex-grow: 1;
+}

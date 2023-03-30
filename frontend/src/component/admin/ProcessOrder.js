@@ -89,7 +89,7 @@ const ProcessOrder = () => {
         {loading ? (
           <LoadingScreen />
         ) : (
-          <div className="newProductContainer">
+          <div className="orderProductContainer">
             {/* Render the order details */}
             <div
               className="confirmOrderPage"
@@ -164,17 +164,19 @@ const ProcessOrder = () => {
                 {/* Render the cart items */}
                 <div className="confirmCartItems">
                   <Typography>Your cart items are:</Typography>
-                  <div className="confirmCartItemsContainer">
+                  <div className="confirmOrderItemsContainer">
                     {order.orderItems &&
                       order.orderItems.map((item) => (
-                        <div key={item.product}>
+                        <div key={item.product} className="orderItem">
                           <img src={item.image} alt="Productname" />
                           <Link to={`/product/${item.product}`}>
-                            {item.name}
+                            {item.name} 
                           </Link>
+                          
+
                           <span>
-                            {item.quantity} * ${item.price} ={" "}
-                            <b>$${item.price * item.quantity}</b>
+                            {"  "}{item.quantity} * ${item.price} ={" "}
+                            <b>${item.price * item.quantity}</b>
                           </span>
                         </div>
                       ))}

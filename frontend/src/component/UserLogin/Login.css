@@ -7,10 +7,11 @@
     font-family: 'Poppins',sans-serif;
     width: 100vw;
     background: linear-gradient(to right, #333399,#ff00cc);
-  position: relative;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+
  
 }
 
@@ -47,6 +48,7 @@
     justify-content: space-evenly;
     height: 70%;
     transition: all 0.5s;
+    padding-bottom: 5em;
 }
 
 .login-card-logo, .login-card-header{
@@ -136,7 +138,10 @@
   }
   
   .shiftToNeutralForm {
-    transform: translateX(0%) translateY(-100%);
+    transform: translateX(0%) translateY(-79%);
+  }
+  .shiftToNeutralFormpass{
+    transform: translateX(0%) translateY(-60%);
   }
   
   .shiftToRight {

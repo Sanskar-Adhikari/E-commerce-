@@ -155,7 +155,7 @@ const UpdateProduct = () => {
     <Fragment>
       {/* Component that displays a heading */}
       <TopHeading title="New Product" />
-      <div className="dashboard">
+      <div className="dashboard shippinginfo">
         {/* Component that displays a sidebar */}
         <SideBar />
         <div className="newProductContainer">
