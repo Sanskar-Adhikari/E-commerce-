@@ -86,13 +86,13 @@ function Footer() {
 
         {/* Footer social media icons */}
         <div className="footer-icons">
-          <a href="https://www.google.com/">
+          <a href="https://www.facebook.com/">
             <FontAwesomeIcon icon={faFacebook} />
           </a>
-          <a href="https://www.google.com/">
+          <a href="https://www.twitter.com/">
             <FontAwesomeIcon icon={faTwitter} />
           </a>
-          <a href="https://www.google.com/">
+          <a href="https://www.instagram.com/">
             <FontAwesomeIcon icon={faInstagram} />
           </a>
         </div>

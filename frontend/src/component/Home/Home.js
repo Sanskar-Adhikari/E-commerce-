@@ -52,7 +52,7 @@ const Home = () => {
 
           <div className="banner">
             <h2> Welcome to buy, sell, giveaway</h2>
-            <h1>Find amazing resouces</h1>
+            <h1>Find amazing resources</h1>
             <a href="#scroll">
               <button className="myButton">Find Products</button>
             </a>
@@ -69,6 +69,7 @@ const Home = () => {
                 <ProductCard key={product._id} product={product} />
               ))}
           </div>
+          <a href="/products" className="view">View all products</a>
         </Fragment>
       )}
     </Fragment>
