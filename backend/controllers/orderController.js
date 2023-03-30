@@ -8,7 +8,7 @@ const catchAsyncErrors= require("../middleware/catchAsyncErrors");
 /*
 newOrder()
 NAME
-    newOrder - Creates a new order and stores it in the database.
+    newOrder - Creates a (new) order and stores it in the database.
 SYNOPSIS
     newOrder = async(req, res, next);
     req -> Request object that consists of the order details.
