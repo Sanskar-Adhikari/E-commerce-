@@ -51,13 +51,15 @@ const Home = () => {
           <TopHeading title="SENIOR PROJECT" />
 
           <div className="banner">
-            <p> Welcome to buy, sell, giveaway</p>
-            <h1>Find amazing resouces</h1>
-            <a href="#container">
-              <button className="myButton">Scroll</button>
+            <h2> Welcome to buy, sell, giveaway</h2>
+            <h1>Find amazing resources</h1>
+            <a href="#scroll">
+              <button className="myButton">Find Products</button>
             </a>
           </div>
-          <h2 className="homeHeading"> Featured Products</h2>
+
+          <h2 className="homeHeading" id="scroll"> Featured Products</h2>
+
 
           <div className="containar" id="container">
 
@@ -67,6 +69,7 @@ const Home = () => {
                 <ProductCard key={product._id} product={product} />
               ))}
           </div>
+          <a href="/products" className="view">View all products</a>
         </Fragment>
       )}
     </Fragment>

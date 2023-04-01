@@ -1,7 +1,7 @@
   .wrapper {
     position: relative;
     width: 850px;
-    height: 500px;
+    height: 430px;
     margin: 100px auto;
     background: url("../extra/duckie.avif");
     background-position: 90% 50%;
@@ -30,4 +30,14 @@
     box-shadow: 0 0 4px rgba(55,55,55,.3);
     border-radius: 5px;
   }
+
+  .heading{
+  padding-left: 35%;
+  font-size: 28px;
+  padding-bottom: 20px;
+  color: rgb(37, 99, 99);
+  }
   
+  .content>p{
+    color: rgb(11, 52, 39);
+  }

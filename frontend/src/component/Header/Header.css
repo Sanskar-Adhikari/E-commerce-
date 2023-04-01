@@ -84,7 +84,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #522952;
+    background-color:#49b9d5;
 }
 
 .navbar {
@@ -98,7 +98,7 @@ li {
 
 li a {
     display: block;
-    color: #b3a0df;
+    color: #555;
     text-align: center;
     padding: 16px;
     text-decoration: none;
@@ -106,8 +106,8 @@ li a {
 }
 
 .navbar-item > a:hover {
-    box-shadow: inset 100px 0 0 0 #da8dde;
-    color: rgb(50, 20, 61);
+    box-shadow: inset 100px 0 0 0 #394ea2;
+    color: rgb(170, 173, 225);
     border-radius: 18px;
 }
 

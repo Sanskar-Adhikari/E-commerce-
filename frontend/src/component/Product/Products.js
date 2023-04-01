@@ -14,11 +14,10 @@ import TopHeading from "../TopHeading";
 const categories = [
   "Books",
   "Notes",
-  "StudyMaterial",
-  "Past Papers",
+  "Study Material",
+  "Research Papers",
   "Study Guides",
-  "laptop",
-  "SmartPhones",
+  "Devices",
   "Shoes",
   "DormItems",
 ];

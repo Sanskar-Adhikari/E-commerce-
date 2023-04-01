@@ -86,11 +86,11 @@ const UpdatePassword = () => {
                 <img src={logos} alt="logo" />
               </div>
               <div className="login-card-header">
-                <h1>Update Profile</h1>
+                <h1>Update Password</h1>
               </div>
               <form
                 // A form element that calls the 'updatePasswordSubmit' function on submit
-                className="updateform login-card-form shiftToNeutralForm "
+                className="updateform login-card-form shiftToNeutralFormpass "
                 onSubmit={updatePasswordSubmit}
               >
 
@@ -132,6 +132,7 @@ const UpdatePassword = () => {
 
                 {/* A submit button */}
                 <input type="submit" value="Update" className="loginBtn" />
+                <a href="/"> Nevermind</a>
               </form>
             </div>
           </div>

@@ -1,5 +1,5 @@
 .ProductDetails{
-    background-color: rgb(216, 232, 234);
+    background-color:transparent;
     width: 100vw;
     max-width: 100%;
     padding: 6vmax;
@@ -27,12 +27,12 @@
 }
 
 .detailsBlock-1 >h2{
-    color: rgba(6, 8, 70, 0.8);
+    color: rgba(8, 28, 58, 0.8);
     font:600 1.6vmax;
 }
 
 .detailsBlock-1>p{
-    color: rgba(18, 22, 135, 0.5);
+    color: rgba(8, 28, 58, 0.8);
     font:600 1.6vmax;
     padding-bottom: 2rem;
 
@@ -44,13 +44,13 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-top: 2px solid rgba(157, 0, 255, 0.3);
-    border-bottom: 2px solid rgba(225, 0, 255, 0.3);
+    border-top: 2px solid rgba(41, 10, 60, 0.3);
+    border-bottom: 2px solid rgba(34, 8, 38, 0.3);
     width: 90%;
 }
 
 .detailsBlock-2-span{
-    color: rgba(72, 75, 178, 0.5);
+    color: rgba(72, 75, 178, 0.8);
     padding-left: 0.7rem;
     font: 200 1vmax "sans-serif";
 }
@@ -125,7 +125,9 @@
     padding: 12px 0px;
     color: rgba(0,0,0,0.7);
     font-size: 17px;
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
   }
 
   .detailsBlock-4{
@@ -142,7 +144,7 @@
 
   .submitReview{
     border:none;
-    background-color: rgb(129, 63, 190);
+    background-color: rgb(63, 88, 190);
     font: 500 8px;
     border-radius: 22px;
     padding: 8px 25px;
@@ -235,11 +237,11 @@
   }
 .reviewsHeading{
   color:rgba(0, 0, 0, 0.846);
-  font: 500 20px;
+  font: 800 30px sans-serif;
   text-align: center;
   border-bottom: 2px solid rgba(0, 0, 0, 0.559);
   padding: 8px;
-  width: 180px;
+  width: 280px;
   margin: auto;
   margin-bottom: 20px;
 }
@@ -262,13 +264,13 @@
 }
 
 .reviewCardComment{
-  color:rgb(73, 194, 228);
+  color:rgb(94, 180, 204);
   font: 300 22px "sans-serif";
 
 }
 
 .reviewCard > p{
-  color:rgb(41, 173, 109);
+  color:rgb(78, 87, 137);
   font: 600 30px "sans-serif";
 }
 

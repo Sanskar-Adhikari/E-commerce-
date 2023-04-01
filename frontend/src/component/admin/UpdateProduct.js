@@ -39,11 +39,10 @@ const UpdateProduct = () => {
   const categories = [
     "Books",
     "Notes",
-    "StudyMaterial",
-    "Past Papers",
+    "Study Material",
+    "Research Papers",
     "Study Guides",
-    "laptop",
-    "SmartPhones",
+    "Devices",
     "Shoes",
     "DormItems",
   ];
@@ -155,7 +154,7 @@ const UpdateProduct = () => {
     <Fragment>
       {/* Component that displays a heading */}
       <TopHeading title="New Product" />
-      <div className="dashboard">
+      <div className="dashboard shippinginfo">
         {/* Component that displays a sidebar */}
         <SideBar />
         <div className="newProductContainer">
