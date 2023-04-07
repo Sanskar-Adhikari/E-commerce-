@@ -16,7 +16,7 @@ NAME
 SYNOPSIS
     Cart();
 DESCRIPTION
-    This component is used to display the items present in the cart, along with their quantities and subtotals. 
+    This component is used to display the items present in the cart, along with their quantities and subtotal. 
     It also allows the user to increase or decrease the quantity of an item in the cart, and to remove an item from the cart. 
     If there are no items in the cart, it displays a message to that effect and provides a link to view products. If there are items in the cart, 
     it displays the total price of all the items in the cart, along with a checkout button that redirects to the shipping page.
