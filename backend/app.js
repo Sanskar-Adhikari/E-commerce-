@@ -29,6 +29,7 @@ const product = require("./routes/productRoute");
 const user = require("./routes/userRoute");
 const order = require("./routes/orderRoute");
 const payment = require("./routes/paymentRoute");
+const path = require('path');
 
 // Route for product-related requests
 app.use("/api/v1", product); 
