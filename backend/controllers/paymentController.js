@@ -6,7 +6,7 @@ const stripe= require("stripe")(process.env.STRIPE_API_SECRET);
 /*
 processPayment()
 NAME
-    processPayment - Processes payment using Stripe API.
+    processPayment - Processes payment using Stripe API
 SYNOPSIS
     processPayment = async(req, res, next);
     req -> Request object that consists of the payment details.
