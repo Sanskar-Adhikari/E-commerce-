@@ -3,11 +3,11 @@ const cookieParser = require("cookie-parser")
 const bodyParser = require("body-parser")
 const fileUpload = require("express-fileupload")
 const errorMiddleware= require("./middleware/error");
-const dotenv = require("dotenv")
 
 // Load environment variables from the .env file
-dotenv.config({ path: "backend/config/config.env" });
-
+if (process.env.NODE_ENV !== "PRODUCTION") {
+    require("dotenv").config({ path: "backend/config/config.env" });
+  }
 // Initialize the Express application
 const app = express();
 
@@ -29,6 +29,7 @@ const product = require("./routes/productRoute");
 const user = require("./routes/userRoute");
 const order = require("./routes/orderRoute");
 const payment = require("./routes/paymentRoute");
+const path = require('path');
 
 // Route for product-related requests
 app.use("/api/v1", product); 
@@ -42,6 +43,12 @@ app.use("/api", order);
 // Route for payment-related requests
 app.use("/api", payment); 
 
+
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+});
 // Configure middleware for handling errors
 app.use(errorMiddleware);
 

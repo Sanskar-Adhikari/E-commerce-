@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js"
+    "dev": "nodemon backend/server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend --legacy-peer-deps && npm run build --prefix frontend",
+    "build": "npm i"
   },
   "author": "",
   "license": "ISC",
@@ -30,5 +32,8 @@
     "react-redux": "^8.0.5",
     "stripe": "^11.13.0",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "source-map-loader": "^4.0.1"
   }
 }

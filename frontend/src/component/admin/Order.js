@@ -151,7 +151,7 @@ const Order = () => {
         {/* Sidebar Component */}
         <SideBar />
         <div className="productListContainer">
-          <h1 id="productListHeading">ALL PRODUCTS</h1>
+          <h1 id="productListHeading">ALL ORDERS</h1>
           {/* Data grid to display the list of orders */}
           <DataGrid
             rows={rows}  // rows to be displayed
