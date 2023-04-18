@@ -40,7 +40,7 @@ exports.registerUser= catchAsyncErrors(async(req,res,next)=>{
             url:myCloud.secure_url,
         },
     });
-
+//login immediately after registering.
 sendToken(user, 201, res);
 })
 /* registerUser = async(req, res, next); */
@@ -72,12 +72,14 @@ exports.loginUser= catchAsyncErrors(async(req,res,next)=>{
         return next(new ErrorHandler("Please enter email and password", 400))
     }
     const user= await User.findOne({email}).select("+password"); //becasue we have password select= false we need to + it here
-    if(!user){
+    if(!user)
+    {
         return next(new ErrorHandler("Invalid email or password",401)) //401 = unauthorized
     }
 
     const isMatch = await user.comparePassword(password); 
-    if(!isMatch){
+    if(!isMatch)
+    {
         return next(new ErrorHandler("Invalid email or password",401))  //do not want to say password because any person who are ramdomly trying to login might figure out there exists an user with this email
 
     }
@@ -143,7 +145,8 @@ exports.forgotPass = catchAsyncErrors(async (req, res, next) => {
         email: req.body.email
     });
 
-    if (!user) {
+    if (!user) 
+    {
         return next(new ErrorHandler("User with this email cannot be found", 404));
     }
 
