@@ -57,7 +57,8 @@ const UpdateUser = () => {
   useEffect(() => {
     // If the user ID in the URL doesn't match the ID of the user in the Redux store,
     // fetch the user details using the ID from the URL
-    if (user && user._id !== userId) {
+    if (user && user._id !== userId) 
+    {
       dispatch(getUserDetails(userId));
     }
     // Otherwise, update the state with the user details from the Redux store
@@ -66,11 +67,13 @@ const UpdateUser = () => {
       setEmail(user.email);
       setRole(user.role);
     }
-    if (error) {
+    if (error) 
+    {
       alert.error(error);
       dispatch(clearErrors());
     }
-    if (updateError) {
+    if (updateError) 
+    {
       alert.error(error);
       dispatch(clearErrors());
     }

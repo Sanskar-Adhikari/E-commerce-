@@ -109,22 +109,26 @@ const Payment = () => {
       });
 
       // Handle payment result
-      if (result.error) {
+      if (result.error) 
+      {
         payBtn.current.disabled = false;
         alert.error(result.error.message);
       } else {
-        if (result.paymentIntent.status === "succeeded") {
+        if (result.paymentIntent.status === "succeeded") 
+        {
           order.paymentInfo = {
             id: result.paymentIntent.id,
             status: result.paymentIntent.status,
           };
           dispatch(createOrder(order));
           navigate("/success");
-        } else {
+        } else 
+        {
           alert.error("There's some issue while processing payment ");
         }
       }
-    } catch (er) {
+    } catch (er) 
+    {
       payBtn.current.disabled = false;
       alert.error(er.response.data.message);
     }
@@ -132,7 +136,8 @@ const Payment = () => {
 
   // Handle errors
   useEffect(() => {
-    if (error) {
+    if (error) 
+    {
       alert.error(error);
       dispatch(clearErrors());
     }

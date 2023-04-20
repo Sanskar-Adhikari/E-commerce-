@@ -44,17 +44,21 @@ const UserList = () => {
 
   // Use the useEffect hook to handle the initial load of the page and to update the state variables when necessary
   useEffect(() => {
-    if (error) {
+    if (error) 
+    
+    {
       alert.error(error);
       dispatch(clearErrors());
     }
 
-    if (deleteError) {
+    if (deleteError) 
+    {
       alert.error(deleteError);
       dispatch(clearErrors());
     }
 
-    if (isDeleted) {
+    if (isDeleted) 
+    {
       alert.success(message);
       navigate("/admin/users");
       dispatch({ type: DELETE_USER_RESET });

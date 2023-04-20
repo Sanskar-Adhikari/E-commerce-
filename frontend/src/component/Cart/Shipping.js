@@ -52,7 +52,8 @@ const Shipping = () => {
     e.preventDefault();
 
     // Perform validation on the phone number field
-    if (phoneNo.length < 10 || phoneNo.length > 10) {
+    if (phoneNo.length < 10 || phoneNo.length > 10) 
+    {
       alert.error("Phone Number should be exactly 10 digits");
       return;
     }

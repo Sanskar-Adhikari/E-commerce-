@@ -37,7 +37,7 @@ const productCard = ({ product }) => {
       <p>{product.name}</p>
       <div>
         
-        {/* Render Rating component */}
+        {/* Render Rating component. */}
         <Rating {...options} />
         <span className="">( {product.numberOfReviews} Reviews )</span>
       </div>
