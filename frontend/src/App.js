@@ -1,4 +1,4 @@
-//importing all the components to bring together
+//importing all the components to bring together.
 import "./App.css";
 import Header from "./component/Header/Header";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";

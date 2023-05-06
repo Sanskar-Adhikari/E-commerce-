@@ -12,7 +12,7 @@ class ErrorHandler extends Error{
     DESCRIPTION
         The ErrorHandler class is used as a custom error handler for the application. It extends the Error class and adds a status code property to the error object. This makes it easier to handle errors throughout the application and return appropriate status codes to the client.
     RETURNS
-        Nothing. The constructor is used to initialize the ErrorHandler object with a message and a status code.
+        Nothing. The constructor is used to initialize the ErrorHandler object with a message and a status code
     */
     constructor(message, statusCode)
     {

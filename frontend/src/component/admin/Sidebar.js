@@ -24,7 +24,7 @@ DESCRIPTION
     This is a React component that displays a sidebar for the admin dashboard. It includes links to the homepage, admin dashboard, products (with sub-links to view all products and create a new product), 
     orders, users, and product reviews. The products link includes a TreeView component to display the sub-links. The component utilizes various icons from material-ui/icons to enhance the visual display of the sidebar.
 RETURNS
-    Returns the JSX for the admin sidebar.
+    Returns the JSX for the admin sidebar
 */
 /**/
 const Sidebar = () => {

@@ -96,7 +96,7 @@ const UserOptions = ({ user }) => {
     navigate("/cart");
   }
 
-  // Function to log out the user
+  // Function to log out the user.
   function logoutUser() {
     dispatch(logout());
     alert.success("Logout was successful");

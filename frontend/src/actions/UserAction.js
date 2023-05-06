@@ -31,7 +31,7 @@ DESCRIPTION
     If the request is successful, it dispatches a LOGIN_SUCCESS action with the user data.
     If the request fails, it dispatches a LOGIN_FAIL action with the error message.
 RETURNS
-    This function does not return anything, but dispatches actions to update the state of the application with the result of the request.
+    This function does not return anything, but dispatches actions to update the state of the application with the result of the request
 */
 /**/
 export const login = (email, password)=>async(dispatch)=>{

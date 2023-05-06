@@ -145,7 +145,7 @@ const Payment = () => {
 
   return (
     <Fragment>
-      {/* The TopHeading component renders a title for the payment section */}
+      {/* The TopHeading component renders a title for the payment section. */}
       <TopHeading title="Payment" />
 
       {/* The CheckoutSteps component renders a progress bar showing the user's current step in the checkout process */}

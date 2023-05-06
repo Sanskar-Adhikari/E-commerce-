@@ -16,7 +16,7 @@ SYNOPSIS
 DESCRIPTION
     This component displays a success message after the order is successfully placed.
 RETURNS
-    A div containing a success message with a link to view orders.
+    A div containing a success message with a link to view orders
 */
 /**/
 const OrderSuccess = () => {

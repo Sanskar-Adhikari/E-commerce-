@@ -1,4 +1,4 @@
-//Product constants
+//Product constants.
 
 
 export const ALL_PRODUCT_REQUEST = "ALL_PRODUCT_REQUEST"

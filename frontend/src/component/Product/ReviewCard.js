@@ -9,7 +9,7 @@ NAME
     ReviewCard
 SYNOPSIS
     ReviewCard = ({review})
-    review -> object containing review data
+    review -> object containing review data.
 DESCRIPTION
     This component renders a card with a user's review details including their name, rating and comment.
 RETURNS

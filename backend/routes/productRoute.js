@@ -13,7 +13,7 @@ router.route("/admin/product/new").post(isAuthUser, authorizeRoles("admin"), cre
 // Update an existing product (for admin users)
 router.route("/admin/product/:id").put(isAuthUser, authorizeRoles("admin"), updateProduct);
 
-// Delete an existing product (for admin users)
+// Delete an existing product (for admin users).
 router.route("/admin/product/:id").delete(isAuthUser, authorizeRoles("admin"), deleteProduct);
 
 // Get details for a single product

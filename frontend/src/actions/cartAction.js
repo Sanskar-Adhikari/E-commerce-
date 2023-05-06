@@ -47,7 +47,7 @@ export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
 /*
 removeItemsFromCart
 NAME
-    removeItemsFromCart - Removes an item from the cart
+    removeItemsFromCart - Removes an item from the cart.
 SYNOPSIS
     removeItemsFromCart = async(id, dispatch, getState);
     id -> The id of the product to be removed from the cart.

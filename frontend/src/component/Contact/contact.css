@@ -11,7 +11,6 @@
     width: clamp(100px, 90%, 1000px);
     margin: 80px 50px;
     display: flex;
-  
   }
   
   .contact-links, .contact-form-wrapper {

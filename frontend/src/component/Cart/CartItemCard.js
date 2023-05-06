@@ -39,6 +39,6 @@ const CartItemCard = ({ item, deleteCartItems }) => {
     </div>
   );
 };
-/* CartItemCard({item, deleteCartItems}); */
+/* CartItemCard({item, deleteCartItems}) */
 
 export default CartItemCard;

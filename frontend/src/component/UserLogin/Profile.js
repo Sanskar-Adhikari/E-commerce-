@@ -25,7 +25,7 @@ const Profile = () => {
   const navigate = useNavigate();
   const { user, loading, isAuthenticated } = useSelector((state) => state.user);
 
-  // redirect to login page if user is not authenticated
+  // redirect to login page if user is not authenticated.
   useEffect(() => {
     if (isAuthenticated === false) {
       navigate("/login");

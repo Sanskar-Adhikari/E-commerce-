@@ -10,7 +10,7 @@ import AlertTemplate from "react-alert-template-basic";
 // Create a root for rendering React content to the DOM using createRoot method from ReactDOM package
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// Set options for the alert component
+// Set options for the alert component.
 const options = {
   timeout: 5000,
   position: positions.TOP_CENTER,

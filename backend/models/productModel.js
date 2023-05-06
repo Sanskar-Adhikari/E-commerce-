@@ -13,7 +13,7 @@ DESCRIPTION
     A Mongoose schema for defining the structure of a product document in the MongoDB database. The schema includes the
     product name, description, price, ratings, images, category, stock, number of reviews, reviews, user, and creation date.
 RETURNS
-    The Product schema instance
+    The Product schema instance.
 */
 /**/
 const productSchema= new mongoose.Schema({

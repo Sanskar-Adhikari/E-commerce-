@@ -130,7 +130,7 @@ const MyOrders = () => {
             autoHeight
           />
 
-          {/* Displaying the user's name again below the table */}
+          {/* Displaying the user's name again below the table. */}
           <Typography id="myOrdersHeading">{user.name}'s Orders</Typography>
         </div>
       )}

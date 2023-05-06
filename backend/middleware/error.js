@@ -15,7 +15,7 @@ DESCRIPTION
     A middleware function for handling errors that are caught by other middleware functions in the pipeline. The function
     sets the status code and error message based on the type of error and sends it back to the client.
 RETURNS
-    Returns a JSON object with the error message and status code.
+    Returns a JSON object with the error message and status code
 */
 /**/
 module.exports=(err,req,res, next)=>{

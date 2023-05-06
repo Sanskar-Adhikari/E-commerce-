@@ -18,7 +18,7 @@ class ApiFeatures{
         this.query= query;  //this.query can be something like product.find
         this.queryStr = queryStr;
     }
-    /* constructor(query, queryStr); */
+    /* constructor(query, queryStr) */
 
 
 

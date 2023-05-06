@@ -54,7 +54,7 @@ const Contact = () => {
           </div>
           <div class="contact-form-wrapper">
 
-        {/* Contact form with Name, Email and Message fields */}
+        {/* Contact form with Name, Email and Message fields. */}
             <form
               action="mailto:seniorproject.sp23@gmail.com?subject=Product%20Query"
               method="post"

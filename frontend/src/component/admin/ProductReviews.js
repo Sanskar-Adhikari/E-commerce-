@@ -180,7 +180,7 @@ const ProductReviews = () => {
             </Button>
           </form>
 
-          {/* If there are reviews, display them in a table */}
+          {/* If there are reviews, display them in a table. */}
           {reviews && reviews.length > 0 ? (
             <DataGrid
               rows={rows}

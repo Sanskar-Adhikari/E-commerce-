@@ -49,7 +49,7 @@ DESCRIPTION
     This function handles actions related to product data, including fetching all products and products for the admin,
     as well as setting loading and error states and clearing errors.
 RETURNS
-    The updated state object based on the action type
+    The updated state object based on the action type.
 */
 /**/
 export const productsReducer = (state = {products: [] }, action) => {

@@ -121,7 +121,7 @@ const ProcessOrder = () => {
                   </div>
                 </div>
 
-                {/* Render the payment information */}
+                {/* Render the payment information. */}
                 <Typography>Payment</Typography>
                 <div className="orderDetailsContainerBox">
                   <div>

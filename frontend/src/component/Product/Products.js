@@ -10,7 +10,7 @@ import { Slider, Typography } from "@material-ui/core";
 import { useAlert } from "react-alert";
 import TopHeading from "../TopHeading";
 
-// initializes an array of categories
+// initializes an array of categories.
 const categories = [
   "Books",
   "Notes",

@@ -22,7 +22,7 @@ DESCRIPTION
     This function creates a Redux store with the given parameters. It combines the reducers and applies the middleware.
     It also sets the preloaded state and enables the Redux DevTools browser extension if devTools is true.
 RETURNS
-   The created Redux store object.
+   The created Redux store object
 */
 /**/
 const store = configureStore({

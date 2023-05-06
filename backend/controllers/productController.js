@@ -408,4 +408,4 @@ const products= await Product.find()
         products,
     })
 });
-/* getAdminProducts = async(req, res, next); */
+/* getAdminProducts = async(req, res, next) */

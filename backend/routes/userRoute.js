@@ -13,7 +13,7 @@ router.route("/login").post(loginUser);
 // Logout a user
 router.route("/logout").get(logout);
 
-// Forgot password - send email to reset password
+// Forgot password - send email to reset password.
 router.route("/password/forgot").post(forgotPass);
 
 // Reset password with token sent to email

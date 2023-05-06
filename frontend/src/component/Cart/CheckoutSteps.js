@@ -20,7 +20,7 @@ DESCRIPTION
     It uses the Material-UI Stepper component to display the steps, and each step is rendered as a Step component that includes a StepLabel 
     with the label and icon for the step.
 RETURNS
-    Returns a JSX element that displays the checkout steps in a horizontal stepper format, with the current step highlighted as active and any previous steps as completed.
+    Returns a JSX element that displays the checkout steps in a horizontal stepper format, with the current step highlighted as active and any previous steps as completed
 */
 /**/
 const CheckoutSteps = ({ activeStep }) => {

@@ -122,7 +122,7 @@ const ConfirmOrder = () => {
             {/* Title for the order summary section */}
             <Typography>Order Summary</Typography>
 
-            {/* Order summary details */}
+            {/* Order summary details. */}
             <div>
               <div>
                 <p>Total:</p>

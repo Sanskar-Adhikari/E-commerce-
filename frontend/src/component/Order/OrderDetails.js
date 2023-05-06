@@ -66,7 +66,7 @@ const OrderDetails = () => {
                 </Typography>
 
               <div>
-                {/* Display the shipping information */}
+                {/* Display the shipping information. */}
                 <Typography>Shipping Info</Typography>
                 <div className="orderDetailsContainerBox">
                   <div>

@@ -10,7 +10,7 @@ router.route("/order/new").post(isAuthUser, newOrder);
 // Get details for a single order
 router.route("/order/:id").get(isAuthUser, getSingleOrder);
 
-// Get all orders for the authenticated user
+// Get all orders for the authenticated user.
 router.route("/orders/me").get(isAuthUser, myOrder);
 
 // Get all orders for admin users

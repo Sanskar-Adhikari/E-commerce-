@@ -23,7 +23,7 @@ SYNOPSIS
 DESCRIPTION
     This function renders a form to allow the user to update their password.
 RETURNS
-    jsx that renders form to update password.
+    jsx that renders form to update password
 */
 /**/
 const UpdatePassword = () => {

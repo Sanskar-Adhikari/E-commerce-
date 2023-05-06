@@ -167,6 +167,6 @@ const UpdateUser = () => {
     </Fragment>
   );
 };
-/* UpdateUser(); */
+/* UpdateUser() */
 
 export default UpdateUser;

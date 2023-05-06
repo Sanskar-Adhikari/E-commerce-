@@ -157,7 +157,7 @@ const Order = () => {
             rows={rows}  // rows to be displayed
             columns={columns}  // columns to be displayed
             pageSize={10}  // number of rows per page
-            disableSelectionOnClick   // disable row selection on click
+            disableSelectionOnClick   // disable row selection on click.
             className="productListTable"
             autoHeight
           />

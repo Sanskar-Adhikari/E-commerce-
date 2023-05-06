@@ -13,7 +13,7 @@ DESCRIPTION
     Wraps an async function to catch any errors that occur within the application. This function catches the errors and
     passes them to the next middleware function in the pipeline.
 RETURNS
-    Returns a function that catches any errors that occur in the wrapped async function.
+    Returns a function that catches any errors that occur in the wrapped async function
 */
 /**/
 module.exports= efunc => (req,res,next)=>{

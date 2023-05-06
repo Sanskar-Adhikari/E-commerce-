@@ -129,7 +129,7 @@ const ProductList = () => {
     },
   ];
 
-  // Loop through the products array and add each item as a new row in the data grid
+  // Loop through the products array and add each item as a new row in the data grid.
   products &&
     products.forEach((item) => {
       rows.push({

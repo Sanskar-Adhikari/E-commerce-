@@ -12,7 +12,7 @@ SYNOPSIS
     email and the message to be sent.
 DESCRIPTION
     This function is used to send an email using the nodemailer module. It takes in an 
-    object containing the necessary information to send an email. The email is sent using the SMTP server from Gmail.
+    object containing the necessary information to send an email. The email is sent using the SMTP server from Gmail
 RETURNS
     Nothing.
 */

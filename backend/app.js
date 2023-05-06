@@ -18,7 +18,7 @@ app.use(express.json());
 // Parse cookie headers and populate req.cookies
 app.use(cookieParser()); 
 
-// Parse incoming requests with URL-encoded payloads
+// Parse incoming requests with URL-encoded payloads.
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 // Enable file uploads

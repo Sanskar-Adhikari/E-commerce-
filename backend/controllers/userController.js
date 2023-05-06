@@ -488,4 +488,4 @@ exports.deleteUser = catchAsyncErrors(async(req,res,next)=>{
         message:"Deletion successful"
     })
 })
-/* deleteUser = async(req, res, next); */
+/* deleteUser = async(req, res, next) */

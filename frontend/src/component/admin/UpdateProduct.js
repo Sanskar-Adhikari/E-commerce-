@@ -231,7 +231,7 @@ const UpdateProduct = () => {
               />
             </div>
 
-            {/* Input for product images */}
+            {/* Input for product images. */}
             <div id="createProductFormFile">
               <input
                 type="file"

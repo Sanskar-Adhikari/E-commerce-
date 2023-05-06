@@ -20,7 +20,7 @@ RETURNS
 /**/
 const productCard = ({ product }) => {
 
-  // Options for the rating component
+  // Options for the rating component.
   const options = {
     value: product.ratings,
     readOnly: true,

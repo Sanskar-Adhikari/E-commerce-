@@ -166,6 +166,6 @@ const UserList = () => {
     </Fragment>
   );
 };
-/* UserList(); */
+/* UserList() */
 
 export default UserList;

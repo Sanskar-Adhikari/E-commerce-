@@ -35,7 +35,7 @@ const Home = () => {
       alert.error(error);
       dispatch(clearErrors());
     }
-    // Fetch the products using the 'getProduct' action creator
+    // Fetch the products using the 'getProduct' action creator.
     dispatch(getProduct());
   }, [dispatch, error, alert]);
 

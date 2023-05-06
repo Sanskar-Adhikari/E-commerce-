@@ -1,4 +1,4 @@
-//User Constants
+//User Constants.
 
 
 export const LOGIN_REQUEST = "LOGIN_REQUEST";

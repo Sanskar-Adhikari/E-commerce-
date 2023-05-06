@@ -16,6 +16,7 @@
     padding: 2vmax;
     box-sizing: border-box;
     border:1px solid rgb(113, 78, 78);
+    
 }
 
 .ProductDetails>div:last-child{

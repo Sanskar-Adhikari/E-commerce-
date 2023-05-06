@@ -24,7 +24,7 @@ SYNOPSIS
 DESCRIPTION
     This function is used to render the Login component which displays a login and register form allowing user to login/signup as needed
 RETURNS
-    The Login component.
+    The Login component
 */
 /**/
 const Login = () => {

@@ -35,7 +35,7 @@ SYNOPSIS
 DESCRIPTION
     This function takes in the current state of the order and an action and updates the new state of the order based on the action type.
 RETURNS
-    An object with the new state of the order after the action has been applied.
+    An object with the new state of the order after the action has been applied
 */
 /**/
 export const newOrderReducer = (state = {}, action) => {

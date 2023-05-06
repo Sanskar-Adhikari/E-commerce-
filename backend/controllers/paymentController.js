@@ -16,7 +16,7 @@ DESCRIPTION
     It processes the payment using Stripe API and creates a new payment intent.
 RETURNS
     Returns the payment information along with the client secret key as a part of the response object if
-    successful in creating the payment intent.
+    successful in creating the payment intent
 */
 /**/
 exports.processPayment = catchAsyncErrors(async (req, res, next) => {

@@ -127,7 +127,7 @@ const Dashboard = () => {
           <Line data={lineState} />
         </div>
   
-        {/* Doughnut chart to display Product stock status */}
+        {/* Doughnut chart to display Product stock status. */}
         <div className="doughnutChart">
           <Doughnut data={doughnutChart} />
         </div>

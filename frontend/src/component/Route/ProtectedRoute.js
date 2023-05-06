@@ -17,7 +17,7 @@ DESCRIPTION
     A component to protect a route based on user authentication and role.
 RETURNS
     Returns a React component that either renders a loading screen, redirects to the login page,
-    or renders the protected component based on user authentication and role.
+    or renders the protected component based on user authentication and role
 */
 /**/
 const ProtectedRoute = ({ isAdmin, ...rest }) => {

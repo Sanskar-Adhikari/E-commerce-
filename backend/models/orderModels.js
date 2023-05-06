@@ -13,7 +13,7 @@ DESCRIPTION
     A Mongoose schema for defining the structure of an order document in the MongoDB database. The schema includes the
     shipping information, order items, user, payment information, order status, and other related fields.
 RETURNS
-The Order schema instance
+The Order schema instance.
 */
 /**/
 const orderSchema = new mongoose.Schema({

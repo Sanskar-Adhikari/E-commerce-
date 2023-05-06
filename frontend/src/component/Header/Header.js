@@ -60,7 +60,7 @@ function HamburgerOverlay() {
         <Hamburger toggled={isOpen} toggle={handleToggle} />
       </div>
 
-      {/* If the overlay is open, render the contents */}
+      {/* If the overlay is open, render the contents. */}
       {isOpen && (
         <div onClick={handleToggle}>
           <div className="container">

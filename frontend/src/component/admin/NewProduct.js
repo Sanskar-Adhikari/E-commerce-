@@ -195,7 +195,7 @@ const NewProduct = () => {
                 <img key={index} src={image} alt="Product Preview" />
               ))}
             </div>
-            {/* Submit button to create the product */}
+            {/* Submit button to create the product. */}
             <Button
               id="createProductBtn"
               type="submit"

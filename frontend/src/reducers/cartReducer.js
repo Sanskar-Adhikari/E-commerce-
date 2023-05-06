@@ -17,7 +17,7 @@ SYNOPSIS
 DESCRIPTION
     This function takes in the current state of the cart and an action and returns the new state of the cart based on the action type.
 RETURNS
-    An object with the new state of the cart after the action has been applied
+    An object with the new state of the cart after the action has been applied.
 */
 /**/
 export const cartReducer = (state = {cartItems: [], shippingInfo: {},},action) => {

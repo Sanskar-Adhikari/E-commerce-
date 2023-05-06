@@ -12,7 +12,7 @@ SYNOPSIS
 DESCRIPTION
     A component that displays a loading screen.
 RETURNS
-    Returns the JSX for the loading screen component.
+    Returns the JSX for the loading screen component
 */
 /**/
 const LoadingScreen = () => {

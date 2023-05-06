@@ -14,7 +14,7 @@ DESCRIPTION
     It generates the JSX for the author's profile page that includes a brief introduction about the author,
     the motivation behind creating the senior project and the purpose of the application.
 RETURNS
-    Returns the Javascript JSX for the About page of the application.
+    Returns the Javascript JSX for the About page of the application
 */
 /**/
 const About = () => {

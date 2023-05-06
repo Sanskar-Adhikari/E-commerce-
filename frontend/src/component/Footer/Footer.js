@@ -64,7 +64,7 @@ function Footer() {
           <p>+1 (201) 684-7500 </p>
         </div>
 
-        {/* Footer email */}
+        {/* Footer email. */}
         <div>
           <i className="fa fa-envelope"></i>
           <p>

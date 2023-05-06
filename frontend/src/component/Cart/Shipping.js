@@ -29,7 +29,7 @@ DESCRIPTION
     the shipping information, and it dispatches an action to save the information to the store when the
     form is submitted. 
 RETURNS
-    This component returns a JSX element that displays a form for entering shipping information.
+    This component returns a JSX element that displays a form for entering shipping information
 */
 /**/
 const Shipping = () => {

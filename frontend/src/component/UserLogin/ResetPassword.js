@@ -27,7 +27,7 @@ RETURNS
 */
 /**/
 const ResetPassword = () => {
-  // Define a constant variable 'token' from the URL parameters
+  // Define a constant variable 'token' from the URL parameters.
   const { token } = useParams();
 
   // Define constant variables using hooks

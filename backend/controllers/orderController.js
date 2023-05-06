@@ -18,7 +18,7 @@ DESCRIPTION
     It receives the information of the order posted by any user and saves it in the database.
 RETURNS
     Returns the order information along with the status code 201 as a part of the response object if 
-    successful in creating the order. Returns error message if not successful.
+    successful in creating the order. Returns error message if not successful
 */
 /**/
 exports.newOrder = catchAsyncErrors(async(req,res,next)=>{

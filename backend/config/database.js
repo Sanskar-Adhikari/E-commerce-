@@ -14,7 +14,7 @@ DESCRIPTION
     environment variables. If the connection is successful, it logs a message indicating that the database is connected along with 
     the host name to the console.
 RETURNS
-    This function does not return anything.
+    This function does not return anything
 */
 /**/
 const connectDataBase = () => {

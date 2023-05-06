@@ -19,7 +19,7 @@ SYNOPSIS
 DESCRIPTION
     This component renders a form that allows users to enter their email address and submit it to receive a password reset link via email. 
 RETURNS
-    The jsx for ForgotPassword component.
+    The jsx for ForgotPassword component
 */
 /**/
 const ForgotPassword = () => {

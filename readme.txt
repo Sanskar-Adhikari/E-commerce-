@@ -1,4 +1,4 @@
-//dependencies installed
+//these are the dependencies required
 npm init 
 npm i express mongoose dotenv
 npm i nodemon

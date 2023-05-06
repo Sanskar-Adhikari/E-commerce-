@@ -22,7 +22,7 @@ SYNOPSIS
 DESCRIPTION
     This function renders a form to allow the user to update their profile
 RETURNS
-    jsx that renders form to update profile.
+    jsx that renders form to update profile
 */
 /**/
 const UpdateProfile = () => {

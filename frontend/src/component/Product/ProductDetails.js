@@ -36,7 +36,7 @@ DESCRIPTION
     price, description, reviews, and a button to add the product to the cart. It also allows users to submit
     reviews for the product.
 RETURNS
-    JSX Element to display product details
+    JSX Element to display product details.
 */
 /**/
 const ProductDetails = () => {

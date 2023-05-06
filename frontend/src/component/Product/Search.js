@@ -15,7 +15,7 @@ DESCRIPTION
     This component renders a search box with an input field and a submit button. The user can enter a search term
     into the input field and click the submit button to trigger a search.
 RETURNS
-    component that displays a search bar and handles search submissions
+    component that displays a search bar and handles search submissions.
 */
 /**/
 const Search = () => {

@@ -19,7 +19,7 @@ DESCRIPTION
     If the token is not present or is invalid, the function sends an error message back to the client.
 RETURNS
     No return value. However, it adds the 'req.user' property if the user is authenticated and sends an error response
-    back to the client if the user is not authenticated.
+    back to the client if the user is not authenticated
 */
 /**/
 exports.isAuthUser = catchAsyncErrors(async(req,res,next)=>{

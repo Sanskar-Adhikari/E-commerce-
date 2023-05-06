@@ -54,7 +54,7 @@ import {
        This reducer function handles actions related to user authentication, such as login, registration, and logout. 
        It takes in a state object and an action object, and returns a new state object based on the action type. 
  RETURNS
-       The updated state object based on the action type.
+       The updated state object based on the action type
  */
  /**/
  export const userReducer = (state = { user: {} }, action) => {

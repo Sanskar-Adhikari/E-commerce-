@@ -157,7 +157,7 @@ DESCRIPTION
     This method generates a reset password token for the user, adds it to the user schema and returns it. It also adds the
     expire time for the generated resetPasswordToken
 RETURNS
-    Returns the reset password token generated for the user.
+    Returns the reset password token generated for the user
 */
 /**/
 userSchema.methods.getResetPasswordToken =  function(){
